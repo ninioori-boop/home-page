@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דף הבית של היועץ הכלכלי - השקעות לצעירים בתכלס</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.6;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header p {
+      font-size: 1.4rem;
+      font-weight: 400;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    /* Tool Card */
+    .tool-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+
+    .tool-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .tool-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 2.5rem;
+    }
+
+    .tool-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a4b8c;
+      margin-bottom: 0.75rem;
+    }
+
+    .tool-card p {
+      font-size: 1.05rem;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    .tool-card .btn {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      color: #ffffff;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tool-card:hover .btn {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ffffff;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .tool-card {
+        padding: 1.5rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>דף הבית של היועץ הכלכלי</h1>
+      <h1 style="font-size: 1.8rem; font-weight: 600; margin-top: -0.5rem;">השקעות לצעירים בתכלס</h1>
+      <p>פה תקבלו את כל הכלים שיעזרו לכם לתת את השירות הכי טוב ללקוח</p>
+    </header>
+
+    <div class="tools-grid">
+      <!-- 1. כרטיסיית המקטרג -->
+      <a href="https://ctegoroties-4.vercel.app" target="_blank" class="tool-card">
+        <div class="tool-icon">📊</div>
+        <h3>המקטרג הפיננסי</h3>
+        <p>המקום בו תוכלו לחלק את הוצאות הלקוח לקטגוריות</p>
+        <div class="btn">כניסה לכלי</div>
+      </a>
+
+      <!-- 2. קובץ האקסל הפיננסי -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">📗</div>
+        <h3>קובץ האקסל הפיננסי</h3>
+        <p>קובץ האקסל המרכזי לניהול הנתונים הפיננסיים של הלקוח</p>
+        <div class="btn">כניסה לקובץ</div>
+      </a>
+
+      <!-- 3. צ'קליסט פורמט סיכום פגישה -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">📝</div>
+        <h3>פורמט סיכום פגישה</h3>
+        <p>צ'קליסט לגוגל דוקס - פורמט לסיכום פגישה עם הלקוח</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 4. צ'קליסט מסמך טרום פגישה -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">📋</div>
+        <h3>צ'קליסט טרום פגישה</h3>
+        <p>רשימת הכנה לפני פגישה עם הלקוח</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 5. תובנות חשובות לפגישה -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">💡</div>
+        <h3>תובנות חשובות לפגישה</h3>
+        <p>קובץ דוקס עם תובנות חשובות לשימוש בפגישה</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 6. צ'קליסט העלאת נתונים לאקסל -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">⬆️</div>
+        <h3>איך מעלים נתונים לאקסל</h3>
+        <p>צ'קליסט להעלאת נתונים לקובץ האקסל הפיננסי</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 7. צ'קליסט בחינת האקסל -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">🔍</div>
+        <h3>איך בוחנים את האקסל</h3>
+        <p>צ'קליסט על איך עוברים על האקסל הפיננסי ובוחנים אותו</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 8. דף משימות ללקוח -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">✅</div>
+        <h3>דף משימות ללקוח</h3>
+        <p>קישור לדוקס לשליחת דף משימות ללקוח</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 9. דף מטרות הצלחה ללקוח -->
+      <a href="#" target="_blank" class="tool-card">
+        <div class="tool-icon">🎯</div>
+        <h3>דף מטרות הצלחה ללקוח</h3>
+        <p>צ'קליסט להגדרת מטרות והצלחה ללקוח</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+    </div>
+
+    <footer>
+      <p>השקעות לצעירים בתכלס - כל הכלים במקום אחד</p>
+    </footer>
+  </div>
+</body>
+</html>
