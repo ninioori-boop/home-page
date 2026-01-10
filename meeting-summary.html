@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פורמט סיכום פגישה - השקעות לצעירים בתכלס</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.7;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Note Box */
+    .note-box {
+      background: #fef3c7;
+      border: 2px solid #f59e0b;
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+
+    .note-box h3 {
+      color: #92400e;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .note-box ul {
+      list-style: none;
+      color: #92400e;
+    }
+
+    .note-box li {
+      padding: 0.3rem 0;
+      padding-right: 1.5rem;
+      position: relative;
+    }
+
+    .note-box li::before {
+      content: "•";
+      position: absolute;
+      right: 0;
+      color: #f59e0b;
+      font-weight: bold;
+    }
+
+    /* Section */
+    .section {
+      background: #ffffff;
+      border-radius: 16px;
+      padding: 1.75rem;
+      margin-bottom: 1.25rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a4b8c;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .template-text {
+      background: #f8fafc;
+      border-radius: 10px;
+      padding: 1.25rem;
+      font-size: 1.05rem;
+      color: #374151;
+      line-height: 1.9;
+      border-right: 4px solid #2563eb;
+    }
+
+    .template-text .placeholder {
+      background: #dbeafe;
+      color: #1e40af;
+      padding: 0.15rem 0.5rem;
+      border-radius: 4px;
+      font-weight: 600;
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Copy Button */
+    .copy-btn {
+      display: block;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      color: #ffffff;
+      border: none;
+      border-radius: 10px;
+      font-size: 1.1rem;
+      font-weight: 700;
+      font-family: 'Heebo', sans-serif;
+      cursor: pointer;
+      margin-top: 1rem;
+      transition: all 0.3s ease;
+    }
+
+    .copy-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ffffff;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .section {
+        padding: 1.25rem;
+      }
+
+      .section-title {
+        font-size: 1.15rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">→ חזרה לדף הבית</a>
+    
+    <header>
+      <h1>פורמט סיכום פגישה</h1>
+      <p>תבנית להודעת סיכום ללקוח בוואטסאפ</p>
+    </header>
+
+    <div class="note-box">
+      <h3>📝 הערת שימוש ליועץ</h3>
+      <ul>
+        <li>פורמט זה נועד לעזור ליועץ לשלוח הודעה מסכמת לאחר הפגישה עם הלקוח</li>
+        <li>ההודעה נשלחת בוואטסאפ, בערב לאחר הפגישה או לכל המאוחר עד יום לאחר מכן</li>
+        <li>במקרה של עבודה עם זוג, מומלץ לפתוח קבוצת וואטסאפ משותפת לצורך שיתוף ושקיפות לאורך התהליך</li>
+      </ul>
+    </div>
+
+    <!-- פתיחה -->
+    <div class="section">
+      <div class="section-title">👋 פתיחה</div>
+      <div class="template-text">
+        היי <span class="placeholder">___</span>,<br>
+        רציתי לסכם בקצרה את הפגישה שלנו, כדי שיהיה לך סדר ובהירות לקראת ההמשך.
+      </div>
+    </div>
+
+    <!-- סיכום קצר -->
+    <div class="section">
+      <div class="section-title">📋 סיכום קצר של הפגישה</div>
+      <div class="template-text">
+        בפגישה עברנו על <span class="placeholder">___</span><br>
+        דיברנו על <span class="placeholder">___</span><br>
+        והתמקדנו ב<span class="placeholder">___</span>
+      </div>
+    </div>
+
+    <!-- מה ראינו -->
+    <div class="section">
+      <div class="section-title">🔍 מה ראינו ומה השתפר</div>
+      <div class="template-text">
+        מהפגישה עלה ש<span class="placeholder">___</span><br><br>
+        זיהינו נקודות שבהן כבר יש שיפור, וגם אזורים עם פוטנציאל ברור לשיפור, בעיקר ב<span class="placeholder">___</span>
+      </div>
+    </div>
+
+    <!-- משימות -->
+    <div class="section">
+      <div class="section-title">✅ משימות עד הפגישה הבאה</div>
+      <div class="template-text">
+        כדי שנוכל להתקדם בצורה טובה, אלו הדברים שחשוב לבצע עד הפגישה הבאה:<br><br>
+        <span class="placeholder">• משימה 1</span><br>
+        <span class="placeholder">• משימה 2</span><br>
+        <span class="placeholder">• משימה 3</span>
+      </div>
+    </div>
+
+    <!-- פגישה הבאה -->
+    <div class="section">
+      <div class="section-title">📅 מבט קצר לפגישה הבאה</div>
+      <div class="template-text">
+        בפגישה הבאה נעסוק ב<span class="placeholder">___</span><br>
+        המטרה תהיה <span class="placeholder">___</span>
+      </div>
+    </div>
+
+    <!-- סיכום -->
+    <div class="section">
+      <div class="section-title">💬 סיכום</div>
+      <div class="template-text">
+        הפגישה הייתה עוד צעד בתהליך.<br>
+        עשינו סדר, חידדנו כיוונים, והשלב הבא ברור.<br><br>
+        אני כאן לכל שאלה שעולה בין הפגישות 🙏
+      </div>
+    </div>
+
+    <footer>
+      <p>השקעות לצעירים בתכלס - סיכום פגישה מקצועי</p>
+    </footer>
+  </div>
+</body>
+</html>
