@@ -1,0 +1,463 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>פלואו פגישה 3: בניית תקציב ושליטה פיננסית - השקעות לצעירים בתכל'ס</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.7;
+      direction: rtl;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      animation: fadeInUp 0.5s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .section:nth-of-type(1) { animation-delay: 0.1s; }
+    .section:nth-of-type(2) { animation-delay: 0.2s; }
+    .section:nth-of-type(3) { animation-delay: 0.3s; }
+    .section:nth-of-type(4) { animation-delay: 0.4s; }
+    .section:nth-of-type(5) { animation-delay: 0.5s; }
+    .section:nth-of-type(6) { animation-delay: 0.6s; }
+    .section:nth-of-type(7) { animation-delay: 0.7s; }
+    .section:nth-of-type(8) { animation-delay: 0.8s; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      opacity: 0.95;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Goals Section */
+    .goals-section {
+      background: linear-gradient(135deg, #e0e7ff 0%, #c7d2fe 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .goals-section h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #3730a3;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .goals-section ul {
+      list-style: none;
+    }
+
+    .goals-section li {
+      padding: 0.6rem 0;
+      font-size: 1.1rem;
+      color: #312e81;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .goals-section li::before {
+      content: "🎯";
+    }
+
+    /* Section */
+    .section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a4b8c;
+    }
+
+    .section-subtitle {
+      font-size: 1.1rem;
+      color: #6b7280;
+      font-weight: 500;
+      margin-top: 0.3rem;
+    }
+
+    /* List */
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 0.7rem 0;
+      font-size: 1.1rem;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: #22c55e;
+      font-weight: bold;
+      min-width: 20px;
+    }
+
+    /* Sub List */
+    .sub-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      margin-right: 1.5rem;
+      padding-right: 1rem;
+      border-right: 3px solid #2563eb;
+    }
+
+    .sub-list li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+      color: #4b5563;
+      border-bottom: none;
+    }
+
+    .sub-list li::before {
+      content: "→";
+      color: #2563eb;
+    }
+
+    /* After Meeting Section */
+    .after-section {
+      background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .after-section h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .after-section ul {
+      list-style: none;
+    }
+
+    .after-section li {
+      padding: 0.6rem 0;
+      font-size: 1.1rem;
+      color: #78350f;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .after-section li::before {
+      content: "📌";
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ffffff;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header h2 {
+        font-size: 1.2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .section,
+      .goals-section,
+      .after-section {
+        padding: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .checklist li,
+      .goals-section li,
+      .after-section li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">→ חזרה לדף הבית</a>
+    
+    <header>
+      <h1>פלואו פגישה 3: בניית תקציב ושליטה פיננסית</h1>
+      <h2>"הכלכלן של הבית"</h2>
+    </header>
+
+    <!-- Goals Section -->
+    <div class="goals-section">
+      <h3>🎯 מטרת הפגישה</h3>
+      <ul>
+        <li>ליישר קו, להוריד לחץ ולהסביר בדיוק מה הולך לקרות</li>
+        <li>לצאת מהפגישה עם תקציב שהלקוח חי איתו בשלום</li>
+        <li>להכניס את הלקוח למודעות פיננסית מלאה</li>
+        <li>להפוך את המספרים מפגישת המיפוי לתוכנית עבודה</li>
+      </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div>
+          <div class="section-title">פתיחה והצבת מסגרת</div>
+          <div class="section-subtitle">5 דקות</div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li>סמול טוק קצר: בדיקת דופק, איך עבר השבוע מאז הפגישה הקודמת?</li>
+        <li>הצהרת מטרת הפגישה: "היום אנחנו הולכים לעשות סדר. המטרה שלנו היא לצאת מפה עם תקציב שאתה חי איתו בשלום, ולהכניס אותך למודעות מלאה. אנחנו הופכים את המספרים שראינו פעם שעברה לתוכנית עבודה."</li>
+        <li>הצגת שלבי הפגישה:
+          <ul class="sub-list">
+            <li>נעבור על המטרות הפיננסיות שלך (ה"למה" אנחנו עושים את זה)</li>
+            <li>נבנה את התקציב עצמו (טיימינג של חיובים מול הוצאות בפועל)</li>
+            <li>נראה את התזרים הסופי והשיפור שעשינו</li>
+            <li>נגדיר משימות לפגישה הבאה</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div>
+          <div class="section-title">מטרות ומוטיבציה – "עלות אלטרנטיבית"</div>
+          <div class="section-subtitle">10 דקות</div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li>סקירת המטרות: פותחים את המטרות שהוגדרו (חופשה/דירה/רכב/חתונה)</li>
+        <li>עיקרון העלות האלטרנטיבית (הסבר ללקוח): "חשוב שנזכור – כסף הוא משאב מוגבל. כל שקל שאנחנו מחליטים 'לשרוף' היום על משהו רגעי, הוא שקל שנלקח מהמטרה הגדולה שלך (מהדירה/מהחופשה). כשנבנה את התקציב תכף, אני רוצה שהמטרות האלה יהיו לך מול העיניים."</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div>
+          <div class="section-title">בניית התקציב – "הלב של הפגישה"</div>
+          <div class="section-subtitle">40 דקות</div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li><strong>שלב א' – תזמון תזרים (Timing):</strong>
+          <ul class="sub-list">
+            <li>בדיקת מועדים: מתי נכנסת המשכורת? מתי יורד האשראי? מתי יורדת המשכנתא/שכ"ד?</li>
+            <li>התאמה: מוודאים שאין "בור" באמצע החודש (למשל: אשראי יורד ב-2 לחודש, משכורת נכנסת ב-10). אם יש פער – רושמים משימה לנסות להזיז את מועד החיוב</li>
+          </ul>
+        </li>
+        <li><strong>שלב ב' – מעבר על הוצאות (שורה-שורה):</strong>
+          <ul class="sub-list">
+            <li>עוברים קטגוריה קטגוריה (מזון, בילויים, רכב, ביטוחים)</li>
+            <li>השאלה המנחה: לא שואלים "כמה הוצאת?", אלא "כמה אתה מוכן/רוצה להוציא על זה?". זה מעביר את האחריות אליו</li>
+            <li>משא ומתן עצמי: אם הלקוח אומר סכום גבוה מדי, מחזירים אותו למטרות: "אם תוציא כאן 2,000 ש"ח, זה אומר שיישאר פחות לחיסכון לדירה. אתה שלם עם זה?"</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div>
+          <div class="section-title">שיקוף תזרים והצגת השיפור</div>
+          <div class="section-subtitle">10 דקות</div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li>הצגת ה"שורות התחתונות": מראים ללקוח את ההכנסות מול ההוצאות החדשות שהגדרנו</li>
+        <li>השוואה לפגישת המיפוי: "בפגישה הקודמת ראינו שאתה במינוס חודשי של X. לפי התוכנית שבנינו עכשיו, אתה עובר לפלוס של Y. זה הכסף שילך למטרות שלך."</li>
+        <li>חיזוק חיובי: להראות לו שהוא כבר התקדם מעצם המודעות והנכונות לקצץ</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div>
+          <div class="section-title">סיכום ומשימות להמשך</div>
+          <div class="section-subtitle">5 דקות</div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li>הגדרת משימות (דד-ליינים):
+          <ul class="sub-list">
+            <li>שינוי מועדי חיוב (אם צריך)</li>
+            <li>ביטול מנויים מיותרים שעלו בשיחה</li>
+            <li>התחלת שימוש באפליקציה/אקסל למעקב אחרי התקציב החדש</li>
+          </ul>
+        </li>
+        <li>תיאום ציפיות: "השבוע זה המבחן הראשון. נסה לעמוד במספרים שקבענו."</li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div>
+          <div class="section-title">אחרי הפגישה – הדיוור</div>
+          <div class="section-subtitle">באותו ערב/למחרת בבוקר</div>
+        </div>
+      </div>
+      <ul class="checklist">
+        <li>שליחת דוח סיכום פגישה ללקוח</li>
+        <li>קובץ התקציב החדש שבניתם</li>
+        <li>רשימת המשימות עם הדד-ליינים (בפורמט שכתבנו קודם)</li>
+        <li>מילות עידוד</li>
+      </ul>
+    </div>
+
+    <!-- After Meeting Section -->
+    <div class="after-section">
+      <h3>📝 לאחר הפגישה</h3>
+      <ul>
+        <li>שליחת דוח סיכום פגישה מפורט ללקוח</li>
+        <li>שליחת קובץ התקציב החדש שבניתם יחד</li>
+        <li>שליחת רשימת משימות עם דדליינים ברורים</li>
+        <li>מעקב אחרי ביצוע המשימות והכנה לפגישה הבאה</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>השקעות לצעירים בתכל'ס - מבנה פגישת התקציב</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+    </footer>
+  </div>
+</body>
+</html>
