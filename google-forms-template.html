@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תבנית שאלות ל-Google Forms</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #f0f4f8;
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.8;
+      direction: rtl;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      padding: 2rem;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      border-radius: 16px;
+      color: #fff;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .instructions {
+      background: #fff3cd;
+      border: 2px solid #ffc107;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+
+    .instructions h2 {
+      color: #856404;
+      margin-bottom: 1rem;
+    }
+
+    .instructions ol {
+      margin-right: 1.5rem;
+      color: #856404;
+    }
+
+    .instructions li {
+      margin-bottom: 0.5rem;
+    }
+
+    .instructions a {
+      color: #0056b3;
+      font-weight: 700;
+    }
+
+    .section {
+      background: #ffffff;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1rem;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+      border-right: 4px solid #2563eb;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: #1a4b8c;
+      margin-bottom: 1rem;
+      padding-bottom: 0.5rem;
+      border-bottom: 2px solid #e5e7eb;
+    }
+
+    .question {
+      background: #f8fafc;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-bottom: 0.75rem;
+      border: 1px solid #e5e7eb;
+    }
+
+    .question-text {
+      font-weight: 600;
+      color: #374151;
+      margin-bottom: 0.25rem;
+    }
+
+    .question-type {
+      font-size: 0.85rem;
+      color: #6b7280;
+      font-style: italic;
+    }
+
+    .copy-btn {
+      display: inline-block;
+      padding: 0.5rem 1rem;
+      background: #22c55e;
+      color: #fff;
+      border: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      cursor: pointer;
+      margin-top: 0.5rem;
+      font-family: 'Heebo', sans-serif;
+    }
+
+    .copy-btn:hover {
+      background: #16a34a;
+    }
+
+    .note {
+      background: #dbeafe;
+      border-radius: 8px;
+      padding: 1rem;
+      margin-top: 0.5rem;
+      font-size: 0.9rem;
+      color: #1e40af;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>📋 תבנית שאלות ל-Google Forms</h1>
+      <p>העתק את השאלות האלה לטופס הגוגל שלך</p>
+    </header>
+
+    <div class="instructions">
+      <h2>📝 הוראות יצירת הטופס:</h2>
+      <ol>
+        <li>היכנס ל-<a href="https://forms.google.com" target="_blank">forms.google.com</a></li>
+        <li>לחץ על "טופס ריק" או "+" ליצירת טופס חדש</li>
+        <li>תן לטופס שם: <strong>"שאלון הכנה לפגישה - השקעות לצעירים בתכל'ס"</strong></li>
+        <li>הוסף את השאלות מהרשימה למטה</li>
+        <li>בסיום - לחץ על גלגל השיניים ⚙️ → "תגובות" → סמן "קבל התראות במייל על תגובות חדשות"</li>
+        <li>לחץ "שלח" והעתק את הקישור לטופס</li>
+      </ol>
+    </div>
+
+    <!-- כותרת הטופס -->
+    <div class="section">
+      <div class="section-title">🏷️ כותרת הטופס</div>
+      <div class="question">
+        <div class="question-text">שאלון הכנה לפגישה</div>
+        <div class="question-type">תיאור: אנא מלא/י את השאלון הבא לפני הפגישה שלנו. המידע יעזור לנו להתכונן בצורה הטובה ביותר.</div>
+      </div>
+    </div>
+
+    <!-- פרטים אישיים -->
+    <div class="section">
+      <div class="section-title">👤 פרטים אישיים</div>
+      <div class="question">
+        <div class="question-text">שם מלא</div>
+        <div class="question-type">סוג: תשובה קצרה (חובה)</div>
+      </div>
+      <div class="question">
+        <div class="question-text">טלפון</div>
+        <div class="question-type">סוג: תשובה קצרה (חובה)</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מייל</div>
+        <div class="question-type">סוג: תשובה קצרה (חובה)</div>
+      </div>
+      <div class="question">
+        <div class="question-text">גיל</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מצב משפחתי</div>
+        <div class="question-type">סוג: בחירה מרובה - רווק/ה, נשוי/אה, גרוש/ה, אחר</div>
+      </div>
+    </div>
+
+    <!-- הכנסות -->
+    <div class="section">
+      <div class="section-title">💰 1. נתוני הכנסות</div>
+      <div class="question">
+        <div class="question-text">מה ההכנסה החודשית נטו שלך?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מהם מקורות ההכנסה שלך? (משכורת, פרילנס, השכרה וכו')</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+      <div class="note">📎 בקשה: צרף תלושי שכר עדכניים (3 חודשים אחרונים)</div>
+    </div>
+
+    <!-- עו"ש -->
+    <div class="section">
+      <div class="section-title">🏦 2. חשבון עו"ש</div>
+      <div class="question">
+        <div class="question-text">באיזה בנק יש לך חשבון?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה היתרה הממוצעת בעו"ש?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה מסגרת האשראי המאושרת?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">האם אתה נמצא במינוס באופן קבוע?</div>
+        <div class="question-type">סוג: בחירה מרובה - כן / לא / לפעמים</div>
+      </div>
+      <div class="note">📎 בקשה: הורד את תעודת הזהות הבנקאית מהבנק</div>
+    </div>
+
+    <!-- אשראי -->
+    <div class="section">
+      <div class="section-title">💳 3. כרטיסי אשראי</div>
+      <div class="question">
+        <div class="question-text">כמה כרטיסי אשראי יש לך?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה סה"כ ההוצאות החודשיות באשראי?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">פרט את הכרטיסים (חברה, סוג, מסגרת)</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+      <div class="note">📎 בקשה: הורד דוח הוצאות חודשי PDF מכל כרטיס</div>
+    </div>
+
+    <!-- הלוואות -->
+    <div class="section">
+      <div class="section-title">📑 4. הלוואות וחובות</div>
+      <div class="question">
+        <div class="question-text">האם יש לך הלוואות פעילות?</div>
+        <div class="question-type">סוג: בחירה מרובה - כן / לא</div>
+      </div>
+      <div class="question">
+        <div class="question-text">אם כן - פרט את ההלוואות (סכום מקורי, יתרה, החזר חודשי, ריבית)</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+      <div class="note">📎 בקשה: בקש לוח סילוקין מכל גוף ממנו יש הלוואה</div>
+    </div>
+
+    <!-- הוצאות קבועות -->
+    <div class="section">
+      <div class="section-title">📋 5. הוצאות קבועות והוראות קבע</div>
+      <div class="question">
+        <div class="question-text">פרט את ההוצאות הקבועות החודשיות (שכ"ד, חשמל, אינטרנט, סלולר, מנויים וכו')</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה סה"כ ההוצאות הקבועות בחודש?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+    </div>
+
+    <!-- חסכונות -->
+    <div class="section">
+      <div class="section-title">💎 6. חסכונות ונכסים פיננסיים</div>
+      <div class="question">
+        <div class="question-text">האם בדקת בהר הביטוח והר הכסף אם יש כספים על שמך?</div>
+        <div class="question-type">סוג: בחירה מרובה - כן, נמצאו כספים / כן, לא נמצא כלום / לא בדקתי עדיין</div>
+      </div>
+      <div class="question">
+        <div class="question-text">פרט חסכונות ונכסים פיננסיים שיש לך</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+      <div class="note">
+        🔗 קישורים לבדיקה:<br>
+        <a href="https://harb.cma.gov.il/" target="_blank">הר הביטוח</a> | 
+        <a href="https://www.gov.il/he/service/pension_savings_search" target="_blank">הר הכסף</a>
+      </div>
+    </div>
+
+    <!-- פנסיה -->
+    <div class="section">
+      <div class="section-title">🏛️ 7. פנסיה וקרן השתלמות</div>
+      <div class="question">
+        <div class="question-text">מה שם קרן הפנסיה שלך?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה הצבירה בפנסיה?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה דמי הניהול מהפקדה? (באחוזים)</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה דמי הניהול מצבירה? (באחוזים)</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">האם יש לך קרן השתלמות? אם כן - פרט (שם החברה וצבירה)</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+    </div>
+
+    <!-- השקעות -->
+    <div class="section">
+      <div class="section-title">📈 8. תיקי השקעות ונכסים</div>
+      <div class="question">
+        <div class="question-text">האם יש לך תיק השקעות / חשבון מסחר עצמאי?</div>
+        <div class="question-type">סוג: בחירה מרובה - כן / לא</div>
+      </div>
+      <div class="question">
+        <div class="question-text">אם כן - באיזה ברוקר ומה הסכום?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="question">
+        <div class="question-text">האם יש לך דירה בבעלות?</div>
+        <div class="question-type">סוג: בחירה מרובה - כן / לא</div>
+      </div>
+      <div class="question">
+        <div class="question-text">אם כן - מה השווי המוערך ויתרת המשכנתא?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+    </div>
+
+    <!-- ביטוחים -->
+    <div class="section">
+      <div class="section-title">🛡️ 9. ביטוחים</div>
+      <div class="question">
+        <div class="question-text">האם בדקת בהר הביטוח אילו ביטוחים יש לך?</div>
+        <div class="question-type">סוג: בחירה מרובה - כן / לא</div>
+      </div>
+      <div class="question">
+        <div class="question-text">פרט את הביטוחים הקיימים (סוג, חברה, עלות חודשית)</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+      <div class="note">🔗 <a href="https://harb.cma.gov.il/" target="_blank">היכנס להר הביטוח לבדיקה</a></div>
+    </div>
+
+    <!-- דירוג אשראי -->
+    <div class="section">
+      <div class="section-title">⭐ 10. דירוג אשראי</div>
+      <div class="question">
+        <div class="question-text">מה ציון דירוג האשראי שלך?</div>
+        <div class="question-type">סוג: תשובה קצרה</div>
+      </div>
+      <div class="note">🔗 <a href="https://www.captaincredit.co.il/" target="_blank">היכנס לקפטן קרדיט להוצאת דוח</a></div>
+    </div>
+
+    <!-- הערות -->
+    <div class="section">
+      <div class="section-title">💬 11. הערות נוספות</div>
+      <div class="question">
+        <div class="question-text">האם יש משהו נוסף שחשוב לך לציין לפני הפגישה?</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+      <div class="question">
+        <div class="question-text">מה המטרות הפיננסיות העיקריות שלך?</div>
+        <div class="question-type">סוג: פסקה (תשובה ארוכה)</div>
+      </div>
+    </div>
+
+    <div class="instructions" style="background: #d1fae5; border-color: #22c55e;">
+      <h2 style="color: #166534;">✅ אחרי שיצרת את הטופס:</h2>
+      <ol style="color: #166534;">
+        <li>לחץ על "שלח" בפינה הימנית העליונה</li>
+        <li>העתק את הקישור לטופס</li>
+        <li>שלח לי את הקישור ואני אוסיף אותו לאתר שלך</li>
+      </ol>
+    </div>
+
+    <footer>
+      <p>השקעות לצעירים בתכל'ס</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+    </footer>
+  </div>
+</body>
+</html>

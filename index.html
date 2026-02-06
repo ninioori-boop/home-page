@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>דף הבית של היועץ הכלכלי - השקעות לצעירים בתכל'ס</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.6;
+      direction: rtl;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+      animation: fadeInUp 0.6s ease-out;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header p {
+      font-size: 1.4rem;
+      font-weight: 400;
+      opacity: 0.95;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Tools Grid */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    /* Tool Card */
+    .tool-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+      transition: all 0.3s ease;
+      text-decoration: none;
+      color: #000000;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      animation: fadeInUp 0.5s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .tool-card:nth-child(1) { animation-delay: 0.1s; }
+    .tool-card:nth-child(2) { animation-delay: 0.15s; }
+    .tool-card:nth-child(3) { animation-delay: 0.2s; }
+    .tool-card:nth-child(4) { animation-delay: 0.25s; }
+    .tool-card:nth-child(5) { animation-delay: 0.3s; }
+    .tool-card:nth-child(6) { animation-delay: 0.35s; }
+    .tool-card:nth-child(7) { animation-delay: 0.4s; }
+    .tool-card:nth-child(8) { animation-delay: 0.45s; }
+    .tool-card:nth-child(9) { animation-delay: 0.5s; }
+    .tool-card:nth-child(10) { animation-delay: 0.55s; }
+    .tool-card:nth-child(11) { animation-delay: 0.6s; }
+    .tool-card:nth-child(12) { animation-delay: 0.65s; }
+    .tool-card:nth-child(13) { animation-delay: 0.7s; }
+    .tool-card:nth-child(14) { animation-delay: 0.75s; }
+
+    .tool-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    }
+
+    .tool-icon {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 1.5rem;
+      font-size: 1.8rem;
+      color: #ffffff;
+      font-weight: 300;
+    }
+
+    .tool-card h3 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: #1a4b8c;
+      margin-bottom: 0.75rem;
+    }
+
+    .tool-card p {
+      font-size: 1.05rem;
+      color: #4a5568;
+      line-height: 1.7;
+    }
+
+    .tool-card .btn {
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      color: #ffffff;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      font-size: 1rem;
+      transition: all 0.3s ease;
+      border: none;
+      cursor: pointer;
+    }
+
+    .tool-card:hover .btn {
+      transform: scale(1.05);
+      box-shadow: 0 5px 20px rgba(37, 99, 235, 0.4);
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ffffff;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1.1rem;
+      }
+
+      .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+      }
+
+      .tool-card {
+        padding: 1.5rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>דף הבית של היועץ הכלכלי</h1>
+      <h1 style="font-size: 1.8rem; font-weight: 600; margin-top: -0.5rem;">השקעות לצעירים בתכל'ס</h1>
+      <p>פה תקבלו את כל הכלים שיעזרו לכם לתת את השירות הכי טוב ללקוח</p>
+    </header>
+
+    <div class="tools-grid">
+      <!-- שורה עליונה -->
+      <!-- 1. פלואו עבודה טרום פגישה -->
+      <a href="pre-meeting.html" class="tool-card">
+        <div class="tool-icon">▢</div>
+        <h3>פלואו עבודה של היועץ טרום הפגישה</h3>
+        <p>רשימת הכנה לפני פגישה עם הלקוח</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 1.5 מבנה פגישת הצגת התהליך -->
+      <a href="meeting-structure.html" class="tool-card">
+        <div class="tool-icon">◆</div>
+        <h3>מבנה פגישת הצגת התהליך</h3>
+        <p>פגישת היכרות, תיאום ציפיות והצגת התהליך</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 1.6 מבנה פגישת המיפוי הפיננסי -->
+      <a href="mapping-meeting.html" class="tool-card">
+        <div class="tool-icon">▣</div>
+        <h3>מבנה פגישת המיפוי הפיננסי</h3>
+        <p>שיקוף מצב פיננסי והצגת התמונה הכלכלית</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 1.7 מבנה פגישת התקציב -->
+      <a href="budget-meeting.html" class="tool-card">
+        <div class="tool-icon">⊞</div>
+        <h3>מבנה פגישת התקציב</h3>
+        <p>בניית תקציב ושליטה פיננסית</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 1.8 מבנה פגישת בדיקה, בקרה ודיוק -->
+      <a href="control-meeting.html" class="tool-card">
+        <div class="tool-icon">▥</div>
+        <h3>מבנה פגישת בדיקה, בקרה ודיוק</h3>
+        <p>מבנה העבודה של פגישת בדיקה, דיוק ובקרה</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 1.9 מבנה פגישת התוכנית הכלכלית -->
+      <a href="plan-meeting.html" class="tool-card">
+        <div class="tool-icon">◐</div>
+        <h3>מבנה פגישת התוכנית הכלכלית</h3>
+        <p>מבנה העבודה של פגישת בניית התוכנית הכלכלית</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 2. דף משימות ללקוח -->
+      <a href="client-tasks.html" class="tool-card">
+        <div class="tool-icon">✓</div>
+        <h3>דף משימות ללקוח לקראת פגישת המיפוי</h3>
+        <p>רשימת משימות ללקוח להכנה לפגישת המיפוי - כולל ייצוא ל-PDF</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 3. איך מעלים נתונים לאקסל -->
+      <a href="upload-data.html" class="tool-card">
+        <div class="tool-icon">△</div>
+        <h3>איך מעלים נתונים לאקסל</h3>
+        <p>צ'קליסט להעלאת נתונים לקובץ האקסל הפיננסי</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- שורה אמצעית -->
+      <!-- 4. איך בוחנים את האקסל -->
+      <a href="examine-excel.html" class="tool-card">
+        <div class="tool-icon">◎</div>
+        <h3>איך בוחנים את האקסל</h3>
+        <p>צ'קליסט על איך עוברים על האקסל הפיננסי ובוחנים אותו</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 5. תובנות חשובות לפגישה -->
+      <a href="insights.html" class="tool-card">
+        <div class="tool-icon">◇</div>
+        <h3>תובנות חשובות לפגישה</h3>
+        <p>תובנות מרכזיות ליועץ לאחר בחינת האקסל</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- 6. פורמט סיכום פגישה -->
+      <a href="meeting-summary.html" class="tool-card">
+        <div class="tool-icon">≡</div>
+        <h3>פורמט סיכום פגישה</h3>
+        <p>דוקס מסודר שהלקוח מקבל בסוף הפגישה – פירוט מה היה בפגישה ומשימות שעלו ממנה, כולל עותק לתבנית</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+
+      <!-- שורה תחתונה -->
+      <!-- 7. המקטרג הפיננסי -->
+      <a href="https://ctegoroties-4.vercel.app" target="_blank" class="tool-card">
+        <div class="tool-icon">◈</div>
+        <h3>המקטרג הפיננסי</h3>
+        <p>המקום בו תוכלו לחלק את הוצאות הלקוח לקטגוריות</p>
+        <div class="btn">כניסה לכלי</div>
+      </a>
+
+      <!-- 8. קישור לאקסל הפיננסי – מעבר לעמוד יצירת עותק בגוגל שיטס -->
+      <a href="https://docs.google.com/spreadsheets/d/1ulNt18u9Bp1aW1LHgOtP9V8XvOWvHHjC/copy" target="_blank" class="tool-card">
+        <div class="tool-icon">▤</div>
+        <h3>קישור לאקסל הפיננסי</h3>
+        <p>לחץ למעבר לעמוד יצירת עותק בגוגל שיטס</p>
+        <div class="btn">לייצר עותק בגוגל שיטס</div>
+      </a>
+
+      <!-- 9. דף מטרות הצלחה ללקוח -->
+      <a href="goals.html" class="tool-card">
+        <div class="tool-icon">◉</div>
+        <h3>דף מטרות הצלחה ללקוח</h3>
+        <p>צ'קליסט להגדרת מטרות והצלחה ללקוח</p>
+        <div class="btn">כניסה למסמך</div>
+      </a>
+    </div>
+
+    <footer>
+      <p>השקעות לצעירים בתכל'ס - כל הכלים במקום אחד</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+    </footer>
+  </div>
+</body>
+</html>

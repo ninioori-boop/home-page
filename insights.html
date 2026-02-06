@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>תובנות מרכזיות ליועץ - השקעות לצעירים בתכל'ס</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.7;
+      direction: rtl;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      animation: fadeInUp 0.5s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .section:nth-of-type(1) { animation-delay: 0.1s; }
+    .section:nth-of-type(2) { animation-delay: 0.15s; }
+    .section:nth-of-type(3) { animation-delay: 0.2s; }
+    .section:nth-of-type(4) { animation-delay: 0.25s; }
+    .section:nth-of-type(5) { animation-delay: 0.3s; }
+    .section:nth-of-type(6) { animation-delay: 0.35s; }
+    .section:nth-of-type(7) { animation-delay: 0.4s; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+    }
+
+    /* Section */
+    .section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a4b8c;
+    }
+
+    /* List */
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 0.7rem 0;
+      font-size: 1.1rem;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    /* Sub List */
+    .sub-list {
+      list-style: none;
+      margin-top: 0.5rem;
+      margin-right: 1.5rem;
+      padding-right: 1rem;
+      border-right: 3px solid #2563eb;
+    }
+
+    .sub-list li {
+      padding: 0.4rem 0;
+      font-size: 1rem;
+      color: #4b5563;
+      border-bottom: none;
+    }
+
+    /* Form Button */
+    .form-btn-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .form-btn {
+      display: inline-block;
+      padding: 1.2rem 3rem;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.4rem;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .form-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5);
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ffffff;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .section {
+        padding: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .checklist li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">→ חזרה לדף הבית</a>
+    
+    <header>
+      <h1>תובנות מרכזיות ליועץ</h1>
+      <p>לאחר בחינת האקסל - גרסה מחודדת</p>
+    </header>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">תזרים, עמלות ודפוסי חיסכון</div>
+      </div>
+      <ul class="checklist">
+        <li>האם הלקוח נמצא בתזרים חיובי, שלילי או מאוזן</li>
+        <li>האם יש דפוס קבוע של חריגה או חוסר יציבות</li>
+        <li>האם הלקוח מממש את פוטנציאל החיסכון שלו</li>
+        <li>האם הלקוח נמצא במינוס באופן קבוע או נקודתי</li>
+        <li>מה גובה הריבית על המינוס וההשפעה שלה על התזרים</li>
+        <li>האם משולמות עמלות בנקאיות מיותרות בעו"ש</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">שימוש באשראי</div>
+      </div>
+      <ul class="checklist">
+        <li>האם יש סדר בכרטיסי האשראי או ריבוי שימוש לא מבוקר</li>
+        <li>האם הלקוח מגיע לקצה מסגרת האשראי</li>
+        <li>האם יש אשראי מתגלגל כחלק מהשגרה</li>
+        <li>האם משולמות עמלות כרטיס אשראי מיותרות</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">חובות והתחייבויות</div>
+      </div>
+      <ul class="checklist">
+        <li>סוגי ההלוואות שנלקחו</li>
+        <li>האם שיעור ההחזר החודשי עולה על 40% מההכנסה</li>
+        <li>סימון צורך להבין בפגישה את הסיבה לנטילת ההלוואות</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-title">הוצאות קבועות ומנויים</div>
+      </div>
+      <ul class="checklist">
+        <li>כמות המנויים וההורדות הקבועות</li>
+        <li>זיהוי תשלום עודף פוטנציאלי</li>
+        <li>סימון נקודות לבדיקה בפגישה: מו"מ, עדכון חבילות, ביטולים</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div class="section-title">חיסכון ונזילות</div>
+      </div>
+      <ul class="checklist">
+        <li>היכן נמצאים החסכונות של הלקוח</li>
+        <li>האם החסכונות מנוהלים במוצרים יעילים פיננסית</li>
+        <li>זיהוי חיסכון יקר ולא יעיל כמו פוליסות חיסכון עם דמי ניהול שוחקים</li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div class="section-title">פנסיה ומוצרים ארוכי טווח</div>
+      </div>
+      <ul class="checklist">
+        <li>דמי ניהול בפנסיה ביחס לברירת מחדל:
+          <ul class="sub-list">
+            <li>עד 1% מהפקדה</li>
+            <li>עד 0.22% מצבירה</li>
+          </ul>
+        </li>
+        <li>דמי ניהול בקרן השתלמות ביחס לסף סביר של עד 0.6%</li>
+        <li>קיום כספים אבודים או קופות גמל בתיקון 190</li>
+        <li>התאמת מסלולי ההשקעה לגיל הלקוח</li>
+        <li>סימון צורך להפניה לסוכן פנסיוני במידת הצורך</li>
+      </ul>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <div class="section-title">דירוג אשראי</div>
+      </div>
+      <ul class="checklist">
+        <li>מה רמת דירוג האשראי של הלקוח</li>
+        <li>אינדיקציות אפשריות לסיבת הדירוג:
+          <ul class="sub-list">
+            <li>שימוש במסגרת</li>
+            <li>ריבוי התחייבויות</li>
+            <li>אשראי מתגלגל</li>
+          </ul>
+        </li>
+        <li>הכנה לשיח בפגישה על הסיבות והמשמעויות</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>השקעות לצעירים בתכל'ס - תובנות חכמות לייעוץ מקצועי</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+    </footer>
+  </div>
+</body>
+</html>

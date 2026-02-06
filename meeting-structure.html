@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מבנה פגישת הצגת התהליך - השקעות לצעירים בתכל'ס</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.7;
+      direction: rtl;
+    }
+
+    /* Fade-in Animation */
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .section {
+      animation: fadeInUp 0.5s ease-out;
+      animation-fill-mode: both;
+    }
+
+    .section:nth-of-type(1) { animation-delay: 0.1s; }
+    .section:nth-of-type(2) { animation-delay: 0.2s; }
+    .section:nth-of-type(3) { animation-delay: 0.3s; }
+    .section:nth-of-type(4) { animation-delay: 0.4s; }
+    .section:nth-of-type(5) { animation-delay: 0.5s; }
+    .section:nth-of-type(6) { animation-delay: 0.6s; }
+    .section:nth-of-type(7) { animation-delay: 0.7s; }
+    .section:nth-of-type(8) { animation-delay: 0.8s; }
+    .section:nth-of-type(9) { animation-delay: 0.9s; }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 2rem 1rem 3rem;
+      color: #ffffff;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      margin-bottom: 0.5rem;
+      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      opacity: 0.95;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+    }
+
+    /* Goals Section */
+    .goals-section {
+      background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .goals-section h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #92400e;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .goals-section ul {
+      list-style: none;
+    }
+
+    .goals-section li {
+      padding: 0.6rem 0;
+      font-size: 1.1rem;
+      color: #78350f;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .goals-section li::before {
+      content: "🎯";
+    }
+
+    /* Section */
+    .section {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 2rem;
+      margin-bottom: 1.5rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+      transition: all 0.3s ease;
+    }
+
+    .section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .section-number {
+      width: 45px;
+      height: 45px;
+      min-width: 45px;
+      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.3rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #1a4b8c;
+    }
+
+    /* List */
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 0.7rem 0;
+      font-size: 1.1rem;
+      color: #374151;
+      border-bottom: 1px solid #f3f4f6;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.7rem;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    .checklist li::before {
+      content: "✓";
+      color: #22c55e;
+      font-weight: bold;
+      min-width: 20px;
+    }
+
+    /* Summary Section */
+    .summary-section {
+      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+      border-radius: 20px;
+      padding: 2rem;
+      margin-top: 2rem;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .summary-section h3 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #166534;
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .summary-section ul {
+      list-style: none;
+    }
+
+    .summary-section li {
+      padding: 0.6rem 0;
+      font-size: 1.1rem;
+      color: #14532d;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+
+    .summary-section li::before {
+      content: "📌";
+    }
+
+    /* Back Link */
+    .back-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 1rem;
+      margin-bottom: 1rem;
+      opacity: 0.9;
+      transition: opacity 0.3s ease;
+    }
+
+    .back-link:hover {
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      color: #ffffff;
+      opacity: 0.8;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+
+      header h2 {
+        font-size: 1.2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .section,
+      .goals-section,
+      .summary-section {
+        padding: 1.5rem;
+      }
+
+      .section-title {
+        font-size: 1.2rem;
+      }
+
+      .checklist li,
+      .goals-section li,
+      .summary-section li {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="back-link">→ חזרה לדף הבית</a>
+    
+    <header>
+      <h1>מבנה פגישת הצגת התהליך</h1>
+      <h2>פגישת היכרות, תיאום ציפיות והצגת התהליך</h2>
+    </header>
+
+    <!-- קישור למצגת -->
+    <div class="section" style="text-align: center;">
+      <div class="section-title" style="margin-bottom: 1rem;">קישור למצגת</div>
+      <a href="https://drive.google.com/file/d/1VvVbhLznCkF5cqs3C6hea6YBJGiHYmjx/view?usp=drive_link" target="_blank" style="display: inline-block; padding: 1rem 2rem; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: #fff; border-radius: 10px; font-size: 1.1rem; font-weight: 700; font-family: 'Heebo', sans-serif; text-decoration: none;">📽️ פתח את המצגת</a>
+    </div>
+
+    <!-- Goals Section -->
+    <div class="goals-section">
+      <h3>🎯 מטרת הפגישה</h3>
+      <ul>
+        <li>להציג את תהליך הליווי הפיננסי בצורה מסודרת וברורה</li>
+        <li>להבין מה גרם ללקוח להגיע לתהליך</li>
+        <li>להבין מה ייחשב מבחינת הלקוח כהצלחה</li>
+        <li>לייצר אמון ותחושת ביטחון ביועץ ובתהליך</li>
+        <li>לגרום ללקוח להרגיש שהוא בידיים טובות</li>
+      </ul>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">פתיחה, הצגת הפגישה וחיבור ראשוני</div>
+      </div>
+      <ul class="checklist">
+        <li>הצגת מטרת הפגישה ומה הולך לקרות בה</li>
+        <li>הדגשה שמדובר בפגישת היכרות ותיאום ציפיות</li>
+        <li>שיחה פתוחה ואותנטית</li>
+        <li>חיזוק הלקוחות על הבחירה לעשות סדר פיננסי</li>
+        <li>יצירת אווירה נינוחה ונטולת שיפוטיות</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">פתיחת המצגת והצגת התהליך</div>
+      </div>
+      <ul class="checklist">
+        <li>פתיחת המצגת והצגת מבנה הליווי בקצרה</li>
+        <li>הסבר על השלבים המרכזיים בתהליך</li>
+        <li>עצירה יזומה לבדוק הבנה ולוודא שהכול ברור</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">היכרות אישית</div>
+      </div>
+      <ul class="checklist">
+        <li>הצגה קצרה של היועץ</li>
+        <li>היכרות עם הלקוחות</li>
+        <li>הבנה מי הם, מה הביא אותם לתהליך ומה המטרה שלהם</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-title">תיאום ציפיות</div>
+      </div>
+      <ul class="checklist">
+        <li>הסבר שהתהליך הוא אותנטי ולעיתים גם רגשי</li>
+        <li>הבהרה שמדובר בתהליך מובנה עם שלבים ברורים</li>
+        <li>הדגשה שהסביבה נטולת שיפוטיות</li>
+        <li>הבטחה לדיסקרטיות מלאה</li>
+        <li>הבהרה שהתהליך דורש מחויבות ומוטיבציה מצד הלקוחות</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div class="section-title">הצגת מבנה התהליך</div>
+      </div>
+      <ul class="checklist">
+        <li>סקירה קצרה של שלבי הליווי</li>
+        <li>הסבר מה קורה בכל שלב</li>
+        <li>בדיקה יזומה של הבנת הלקוחות</li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div class="section-title">הצגת דף המשימות</div>
+      </div>
+      <ul class="checklist">
+        <li>הצגת דף המשימות בצורה ברורה ונעימה</li>
+        <li>הסבר מה נדרש מהלקוחות עד הפגישה הבאה</li>
+        <li>שליחת דף המשימות ללקוחות לאחר הפגישה</li>
+        <li>הדגשה שהיועץ זמין לכל שאלה בין הפגישות</li>
+      </ul>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <div class="section-title">הצגת מסע הלקוח והיעדים</div>
+      </div>
+      <ul class="checklist">
+        <li>הצגת מסע הלקוח לאורך התהליך</li>
+        <li>חיבור המסע ליעדים שהוגדרו</li>
+      </ul>
+    </div>
+
+    <!-- Summary Section -->
+    <div class="summary-section">
+      <h3>✅ סיכום הפגישה</h3>
+      <ul>
+        <li>סיכום ברור של מה נעשה בפגישה</li>
+        <li>חזרה על הנקודות המרכזיות</li>
+        <li>מענה על שאלות</li>
+        <li>קביעת פגישת המיפוי הכלכלי</li>
+        <li>הבהרה מה הצעד הבא בתהליך</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>השקעות לצעירים בתכל'ס - מבנה פגישת הצגת התהליך</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+    </footer>
+  </div>
+</body>
+</html>

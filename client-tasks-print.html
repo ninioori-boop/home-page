@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>משימות להכנה לפגישה - השקעות לצעירים בתכל'ס</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: #ffffff;
+      min-height: 100vh;
+      color: #000000;
+      line-height: 1.7;
+      direction: rtl;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    /* Header */
+    header {
+      text-align: center;
+      padding: 1.5rem 1rem 2rem;
+      border-bottom: 3px solid #2563eb;
+      margin-bottom: 2rem;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      font-weight: 800;
+      color: #1a4b8c;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1.1rem;
+      color: #4b5563;
+    }
+
+    .logo-text {
+      font-size: 0.95rem;
+      color: #2563eb;
+      font-weight: 600;
+      margin-top: 1rem;
+    }
+
+    /* Form Button */
+    .form-btn-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .form-btn {
+      display: inline-block;
+      padding: 1rem 2.5rem;
+      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .form-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5);
+    }
+
+    .form-note {
+      margin-top: 0.75rem;
+      font-size: 0.95rem;
+      color: #6b7280;
+    }
+
+    /* Section */
+    .section {
+      background: #f8fafc;
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.25rem;
+      border-right: 4px solid #2563eb;
+    }
+
+    .section-header {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .section-number {
+      width: 32px;
+      height: 32px;
+      min-width: 32px;
+      background: #2563eb;
+      color: #ffffff;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: #1a4b8c;
+    }
+
+    /* List */
+    .checklist {
+      list-style: none;
+    }
+
+    .checklist li {
+      padding: 0.5rem 0;
+      font-size: 1rem;
+      color: #374151;
+      border-bottom: 1px solid #e5e7eb;
+      padding-right: 0.5rem;
+    }
+
+    .checklist li:last-child {
+      border-bottom: none;
+    }
+
+    /* Sub List */
+    .sub-list {
+      list-style: none;
+      margin-top: 0.4rem;
+      margin-right: 1.25rem;
+      padding-right: 0.75rem;
+      border-right: 2px solid #93c5fd;
+    }
+
+    .sub-list li {
+      padding: 0.3rem 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+      border-bottom: none;
+    }
+
+    /* Links */
+    .external-link {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background: #2563eb;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .external-link:hover {
+      background: #1d4ed8;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      margin-top: 2rem;
+      border-top: 2px solid #e5e7eb;
+      color: #6b7280;
+      font-size: 0.9rem;
+    }
+
+    footer .brand {
+      font-weight: 700;
+      color: #2563eb;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 1.6rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      .section {
+        padding: 1.25rem;
+      }
+
+      .section-title {
+        font-size: 1.1rem;
+      }
+
+      .form-btn {
+        font-size: 1.1rem;
+        padding: 0.9rem 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>משימות להכנה לפגישה</h1>
+      <p>אנא בצע/י את המשימות הבאות לפני הפגישה</p>
+      <div class="logo-text">השקעות לצעירים בתכל'ס</div>
+    </header>
+
+    <!-- Section 1 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">1</div>
+        <div class="section-title">נתוני הכנסות</div>
+      </div>
+      <ul class="checklist">
+        <li>לצרף תלושי שכר עדכניים</li>
+        <li><strong>טווח זמנים:</strong> 3 חודשים אחורה מהמועד שנבחר</li>
+      </ul>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">2</div>
+        <div class="section-title">חשבון עו"ש</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס לאזור האישי של חשבון הבנק</li>
+        <li>להוריד את תעודת הזהות הבנקאית</li>
+        <li><strong>טווח זמנים:</strong> 3 חודשים אחורה ממועד הבדיקה שנבחר</li>
+      </ul>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">3</div>
+        <div class="section-title">כרטיסי אשראי</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס לאזור האישי של חברת האשראי</li>
+        <li>להיכנס לדוח הוצאות חודשי</li>
+        <li>להוריד את הדוח בפורמט PDF</li>
+        <li>לבצע זאת עבור כל כרטיס אשראי פעיל</li>
+        <li><strong>טווח זמנים:</strong> 3 חודשים אחורה מהמועד שנבחר</li>
+      </ul>
+    </div>
+
+    <!-- Section 4 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">4</div>
+        <div class="section-title">הלוואות וחובות</div>
+      </div>
+      <ul class="checklist">
+        <li>לרשום את כל ההלוואות הקיימות</li>
+        <li>ליצור קשר עם כל גוף ממנו נלקחה הלוואה</li>
+        <li>לבקש לוח סילוקין מלא ועדכני לכל הלוואה</li>
+      </ul>
+    </div>
+
+    <!-- Section 5 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">5</div>
+        <div class="section-title">הוצאות קבועות והוראות קבע</div>
+      </div>
+      <ul class="checklist">
+        <li>לרשום הוצאות קבועות והוראות קבע:
+          <ul class="sub-list">
+            <li>אינטרנט, סלולר, טלוויזיה, מנויים, ביטוחים וכו'</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <!-- Section 6 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">6</div>
+        <div class="section-title">חסכונות ונכסים פיננסיים</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס להר הכסף (פנסיה וחסכונות)
+          <br><a href="https://www.gov.il/he/service/pension_savings_search" target="_blank" class="external-link">לחץ כאן לכניסה להר הכסף</a>
+        </li>
+        <li>לבדוק אם קיימים כספים, חסכונות או קופות על שמך</li>
+        <li>במקרה שנמצא כסף - להוריד דוחות רלוונטיים</li>
+      </ul>
+    </div>
+
+    <!-- Section 7 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">7</div>
+        <div class="section-title">ביטוחים ומוצרים פנסיוניים</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס להר הביטוח ולבדוק אילו ביטוחים קיימים
+          <br><a href="https://harb.cma.gov.il/" target="_blank" class="external-link">לחץ כאן לכניסה להר הביטוח</a>
+        </li>
+        <li>לשים לב האם יש כפל ביטוחים או חוסרים</li>
+        <li>לבדוק בהר הכסף אילו קרנות פנסיה וקרנות השתלמות קיימות
+          <br><a href="https://www.gov.il/he/service/pension_savings_search" target="_blank" class="external-link">לחץ כאן לכניסה להר הכסף</a>
+        </li>
+        <li>להיכנס לאזור האישי של כל גוף מנהל</li>
+        <li>לבדוק ולרשום דמי ניהול (מהפקדה ומצבירה)</li>
+      </ul>
+    </div>
+
+    <!-- Section 8 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">8</div>
+        <div class="section-title">תיקי השקעות ונכסים</div>
+      </div>
+      <ul class="checklist">
+        <li>לצרף דוחות מחשבון מסחר עצמאי אם קיים</li>
+        <li>לציין אם קיימת דירה בבעלות</li>
+      </ul>
+    </div>
+
+    <!-- Section 9 -->
+    <div class="section">
+      <div class="section-header">
+        <div class="section-number">9</div>
+        <div class="section-title">דירוג אשראי</div>
+      </div>
+      <ul class="checklist">
+        <li>להיכנס לאתר קפטן קרדיט ולהוציא דוח דירוג אשראי
+          <br><a href="https://www.captaincredit.co.il/" target="_blank" class="external-link">לחץ כאן לכניסה לקפטן קרדיט</a>
+        </li>
+        <li>לשמור את הדוח כקובץ PDF</li>
+      </ul>
+    </div>
+
+    <footer>
+      <p>תודה על מילוי המשימות! נתראה בפגישה</p>
+      <p class="brand">השקעות לצעירים בתכל'ס</p>
+      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+    </footer>
+  </div>
+</body>
+</html>
