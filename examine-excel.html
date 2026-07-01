@@ -3,282 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>צ'קליסט בחינת האקסל - השקעות לצעירים בתכל'ס</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Heebo', sans-serif;
-      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
-      min-height: 100vh;
-      color: #000000;
-      line-height: 1.7;
-      direction: rtl;
-    }
-
-    /* Fade-in Animation */
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    .section {
-      animation: fadeInUp 0.5s ease-out;
-      animation-fill-mode: both;
-    }
-
-    .section:nth-of-type(1) { animation-delay: 0.1s; }
-    .section:nth-of-type(2) { animation-delay: 0.15s; }
-    .section:nth-of-type(3) { animation-delay: 0.2s; }
-    .section:nth-of-type(4) { animation-delay: 0.25s; }
-    .section:nth-of-type(5) { animation-delay: 0.3s; }
-    .section:nth-of-type(6) { animation-delay: 0.35s; }
-    .section:nth-of-type(7) { animation-delay: 0.4s; }
-    .section:nth-of-type(8) { animation-delay: 0.45s; }
-    .section:nth-of-type(9) { animation-delay: 0.5s; }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    /* Header */
-    header {
-      text-align: center;
-      padding: 2rem 1rem 3rem;
-      color: #ffffff;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    header p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-    }
-
-    /* Purpose Box */
-    .purpose-box {
-      background: #ffffff;
-      border-radius: 16px;
-      padding: 1.5rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      border-right: 5px solid #22c55e;
-    }
-
-    .purpose-box h3 {
-      color: #166534;
-      font-size: 1.2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .purpose-box p {
-      color: #374151;
-      font-size: 1.05rem;
-    }
-
-    /* Section */
-    .section {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .section-number {
-      width: 45px;
-      height: 45px;
-      min-width: 45px;
-      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
-      color: #ffffff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.3rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #1a4b8c;
-    }
-
-    /* Final Section */
-    .section.final {
-      border: 3px solid #22c55e;
-    }
-
-    .section.final .section-number {
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-    }
-
-    .section.final .section-title {
-      color: #166534;
-    }
-
-    /* List */
-    .checklist {
-      list-style: none;
-    }
-
-    .checklist li {
-      padding: 0.7rem 0;
-      font-size: 1.1rem;
-      color: #374151;
-      border-bottom: 1px solid #f3f4f6;
-      padding-right: 0.5rem;
-    }
-
-    .checklist li:last-child {
-      border-bottom: none;
-    }
-
-    /* Sub List */
-    .sub-list {
-      list-style: none;
-      margin-top: 0.5rem;
-      margin-right: 1.5rem;
-      padding-right: 1rem;
-      border-right: 3px solid #2563eb;
-    }
-
-    .sub-list li {
-      padding: 0.4rem 0;
-      font-size: 1rem;
-      color: #4b5563;
-      border-bottom: none;
-    }
-
-    /* Form Button */
-    .form-btn-container {
-      text-align: center;
-      margin: 2rem 0;
-    }
-
-    .form-btn {
-      display: inline-block;
-      padding: 1.2rem 3rem;
-      background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 50px;
-      font-size: 1.4rem;
-      font-weight: 700;
-      box-shadow: 0 4px 20px rgba(34, 197, 94, 0.4);
-      transition: all 0.3s ease;
-    }
-
-    .form-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 25px rgba(34, 197, 94, 0.5);
-    }
-
-    /* Back Link */
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      opacity: 0.9;
-      transition: opacity 0.3s ease;
-    }
-
-    .back-link:hover {
-      opacity: 1;
-    }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #ffffff;
-      opacity: 0.8;
-      font-size: 0.95rem;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-
-      .container {
-        padding: 1rem;
-      }
-
-      .section {
-        padding: 1.5rem;
-      }
-
-      .section-title {
-        font-size: 1.2rem;
-      }
-
-      .checklist li {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <title>איך בוחנים את המיפוי - השקעות לצעירים בתכל'ס</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container narrow">
     <a href="index.html" class="back-link">→ חזרה לדף הבית</a>
-    
+
     <header>
-      <h1>צ'קליסט בחינת האקסל</h1>
-      <p>שלב ניתוח המיפוי - מדריך ליועץ</p>
+      <div class="brand-logo">🔎</div>
+      <h1>בחינת המיפוי</h1>
+      <p>שלב ניתוח המיפוי — מדריך ליועץ</p>
     </header>
 
     <div class="purpose-box">
-      <h3>מטרת הבחינה</h3>
+      <h3>🎯 מטרת הבחינה</h3>
       <p>להבין את תמונת המצב הכללית של הלקוח, לזהות דפוסים מרכזיים, ולהבין מה יוצר את התוצאה התזרימית שמתקבלת.</p>
-      <p style="margin-top: 1rem;">היועץ מקבל עותק של דוקס עם שאלות מכוונות שיעזרו לו לבחון את האקסל בצורה טובה, כדי שיהיה מוכן לפגישה עם הלקוח.</p>
+      <p style="margin-top: 1rem;">היועץ מקבל עותק של דוקס עם שאלות מכוונות שיעזרו לו לבחון את המיפוי בצורה טובה, כדי שיהיה מוכן לפגישה עם הלקוח.</p>
     </div>
 
     <!-- שלב 1 -->
     <div class="section">
       <div class="section-header">
         <div class="section-number">1</div>
-        <div class="section-title">הסתכלות ראשונית – תמונה כללית</div>
+        <div class="section-title">הסתכלות ראשונית – תמונה כללית <span class="tab-chip">🗂️ מיפוי</span></div>
       </div>
       <ul class="checklist">
-        <li>להיכנס ללשונית / תיקיית המיפוי</li>
+        <li>להיכנס לטאב המיפוי במערכת</li>
         <li>להבין במבט ראשון:
           <ul class="sub-list">
             <li>האם התזרים חיובי, מאוזן או שלילי</li>
@@ -292,15 +46,15 @@
     <div class="section">
       <div class="section-header">
         <div class="section-number">2</div>
-        <div class="section-title">הבנת זרימת הנתונים באקסל</div>
+        <div class="section-title">הבנת זרימת הנתונים במערכת</div>
       </div>
       <ul class="checklist">
-        <li>לוודא שכל הנתונים שהוזנו עברו אוטומטית למחשבון ההוצאות</li>
-        <li>להבין כיצד כל מחשבון משפיע:
+        <li>לוודא שכל הנתונים שהוזנו בטאבי אשראי ועו"ש עברו אוטומטית למיפוי</li>
+        <li>להבין כיצד כל חלק משפיע:
           <ul class="sub-list">
-            <li>הוצאות משתנות מחולקות ל־3 חודשים</li>
+            <li>הוצאות משתנות מחולקות ל־3 חודשים (ממוצע)</li>
             <li>חובות והלוואות מוצגות כהוצאה חודשית</li>
-            <li>הוצאות קבועות והוצאות שנתיות משוקפות חודשי</li>
+            <li>הוצאות קבועות והוצאות שנתיות משוקפות חודשי (שנתיות ÷12)</li>
           </ul>
         </li>
       </ul>
@@ -310,10 +64,10 @@
     <div class="section">
       <div class="section-header">
         <div class="section-number">3</div>
-        <div class="section-title">בחינה של מחשבון ההוצאות</div>
+        <div class="section-title">בחינת ההוצאות</div>
       </div>
       <ul class="checklist">
-        <li>לעבור סעיף־סעיף במחשבון ההוצאות</li>
+        <li>לעבור סעיף־סעיף על ההוצאות במיפוי</li>
         <li>להבין מה המשקל של כל סעיף בתזרים הכללי</li>
         <li>לזהות:
           <ul class="sub-list">
@@ -375,7 +129,7 @@
         <div class="section-title">קניות ודפוסי צריכה</div>
       </div>
       <ul class="checklist">
-        <li>להסתכל על סעיפי ההוצאות במחשבון</li>
+        <li>להסתכל על סעיפי ההוצאות המשתנות</li>
         <li>לזהות קטגוריות צריכה דומיננטיות:
           <ul class="sub-list">
             <li>סופר</li>
@@ -391,16 +145,17 @@
     <div class="section">
       <div class="section-header">
         <div class="section-number">8</div>
-        <div class="section-title">חיבור בין סעיפים</div>
+        <div class="section-title">חיבור בין סעיפים ומבט לאורך זמן <span class="tab-chip">📊 מגמות</span></div>
       </div>
       <ul class="checklist">
         <li>להבין אילו סעיפים משפיעים בצורה המשמעותית ביותר על התזרים</li>
         <li>לזהות את הגורמים המרכזיים שיוצרים את תמונת המצב הכללית</li>
+        <li>אפשר להיעזר בטאבי "חודשי" ו"מגמות" כדי לראות התנהגות לאורך זמן, לא רק תמונת רגע</li>
       </ul>
     </div>
 
     <!-- שלב 9 - סיכום -->
-    <div class="section final">
+    <div class="section">
       <div class="section-header">
         <div class="section-number">9</div>
         <div class="section-title">סיכום ליועץ לפני פגישה</div>
@@ -408,7 +163,7 @@
       <ul class="checklist">
         <li>לרשום לעצמך:
           <ul class="sub-list">
-            <li>דפוסי התנהלות מרכזיים שעולים מהאקסל</li>
+            <li>דפוסי התנהלות מרכזיים שעולים מהמיפוי</li>
             <li>נקודות שדורשות הבהרה או העמקה מול הלקוח</li>
           </ul>
         </li>
@@ -418,15 +173,15 @@
     <!-- קישור ליצירת עותק של הדוקס -->
     <div class="section">
       <div class="section-header">
-        <div class="section-title">תבנית הדוקס בבחינת האקסל</div>
+        <div class="section-title solo">תבנית הדוקס לבחינת המיפוי</div>
       </div>
-      <p style="color: #4a5568; margin: 1rem 0; font-size: 1rem;">היועץ מקבל עותק של דוקס עם שאלות מכוונות שיעזרו לו לבחון את האקסל בצורה טובה, כדי שיהיה מוכן לפגישה עם הלקוח. לחץ ליצירת עותק – ייפתח עמוד גוגל דוקס:</p>
-      <a href="https://docs.google.com/document/d/1XVCNPattGkoX-wKcso8wLxpucK3vS_zg/copy" target="_blank" style="display: block; width: 100%; padding: 1rem; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: #fff; border: none; border-radius: 10px; font-size: 1.1rem; font-weight: 700; font-family: 'Heebo', sans-serif; text-align: center; text-decoration: none;">📄 צור עותק של הדוקס</a>
+      <p style="color: var(--muted); margin: 0.5rem 0 0; font-size: 1.03rem;">היועץ מקבל עותק של דוקס עם שאלות מכוונות שיעזרו לו לבחון את המיפוי בצורה טובה, כדי שיהיה מוכן לפגישה עם הלקוח. לחץ ליצירת עותק – ייפתח עמוד גוגל דוקס:</p>
+      <a href="https://docs.google.com/document/d/1XVCNPattGkoX-wKcso8wLxpucK3vS_zg/copy" target="_blank" rel="noopener noreferrer" class="cta-btn" style="width:100%;">📄 צור עותק של הדוקס</a>
     </div>
 
     <footer>
-      <p>השקעות לצעירים בתכל'ס - ניתוח מיפוי מקצועי</p>
-      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+      <p>השקעות לצעירים בתכל'ס — ניתוח מיפוי מקצועי</p>
+      <p class="sign">אורי ניניו</p>
     </footer>
   </div>
 </body>

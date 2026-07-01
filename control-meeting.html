@@ -3,283 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>מבנה פגישה 4: בדיקה, בקרה ודיוק - השקעות לצעירים בתכל'ס</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-  <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: 'Heebo', sans-serif;
-      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 50%, #1e40af 100%);
-      min-height: 100vh;
-      color: #000000;
-      line-height: 1.7;
-      direction: rtl;
-    }
-
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .section {
-      animation: fadeInUp 0.5s ease-out;
-      animation-fill-mode: both;
-    }
-    .section:nth-of-type(1) { animation-delay: 0.1s; }
-    .section:nth-of-type(2) { animation-delay: 0.15s; }
-    .section:nth-of-type(3) { animation-delay: 0.2s; }
-    .section:nth-of-type(4) { animation-delay: 0.25s; }
-    .section:nth-of-type(5) { animation-delay: 0.3s; }
-    .section:nth-of-type(6) { animation-delay: 0.35s; }
-    .section:nth-of-type(7) { animation-delay: 0.4s; }
-    .section:nth-of-type(8) { animation-delay: 0.45s; }
-
-    .container {
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
-
-    header {
-      text-align: center;
-      padding: 2rem 1rem 3rem;
-      color: #ffffff;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      font-weight: 800;
-      margin-bottom: 0.5rem;
-      text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    }
-
-    header p {
-      font-size: 1.1rem;
-      opacity: 0.9;
-    }
-
-    .section {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-      transition: all 0.3s ease;
-    }
-
-    .section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
-    }
-
-    .section-header {
-      display: flex;
-      align-items: center;
-      gap: 1rem;
-      margin-bottom: 1rem;
-    }
-
-    .section-number {
-      width: 45px;
-      height: 45px;
-      min-width: 45px;
-      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
-      color: #ffffff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 1.3rem;
-    }
-
-    .section-title {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #1a4b8c;
-    }
-
-    .section-content {
-      font-size: 1.1rem;
-      color: #374151;
-      padding-right: 0.5rem;
-    }
-
-    .section-content p {
-      margin-bottom: 0.75rem;
-    }
-
-    .section-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    /* Checklist */
-    .checklist {
-      list-style: none;
-    }
-
-    .checklist li {
-      padding: 0.7rem 0;
-      font-size: 1.1rem;
-      color: #374151;
-      border-bottom: 1px solid #f3f4f6;
-      display: flex;
-      align-items: flex-start;
-      gap: 0.7rem;
-    }
-
-    .checklist li:last-child {
-      border-bottom: none;
-    }
-
-    .checklist li::before {
-      content: "✓";
-      color: #22c55e;
-      font-weight: bold;
-      min-width: 20px;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      color: #ffffff;
-      text-decoration: none;
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      opacity: 0.9;
-      transition: opacity 0.3s ease;
-    }
-
-    .back-link:hover {
-      opacity: 1;
-    }
-
-    /* Goals Section */
-    .goals-section {
-      background: linear-gradient(135deg, #fef9c3 0%, #fde68a 100%);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-bottom: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .goals-section h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #92400e;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .goals-section ul {
-      list-style: none;
-    }
-
-    .goals-section li {
-      padding: 0.6rem 0;
-      font-size: 1.1rem;
-      color: #78350f;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .goals-section li::before {
-      content: "🎯";
-    }
-
-    /* After Section */
-    .after-section {
-      background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
-      border-radius: 20px;
-      padding: 2rem;
-      margin-top: 2rem;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
-    }
-
-    .after-section h3 {
-      font-size: 1.4rem;
-      font-weight: 700;
-      color: #166534;
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .after-section ul {
-      list-style: none;
-    }
-
-    .after-section li {
-      padding: 0.6rem 0;
-      font-size: 1.1rem;
-      color: #14532d;
-      display: flex;
-      align-items: center;
-      gap: 0.7rem;
-    }
-
-    .after-section li::before {
-      content: "📌";
-    }
-
-    /* Template Link */
-    .template-link {
-      display: inline-block;
-      margin-top: 1.5rem;
-      padding: 1rem 1.5rem;
-      background: linear-gradient(135deg, #1a4b8c 0%, #2563eb 100%);
-      color: #ffffff;
-      text-decoration: none;
-      border-radius: 12px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
-    }
-
-    .template-link:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 20px rgba(37, 99, 235, 0.4);
-    }
-
-    footer {
-      text-align: center;
-      padding: 2rem;
-      color: #ffffff;
-      opacity: 0.8;
-      font-size: 0.95rem;
-    }
-
-    @media (max-width: 768px) {
-      header h1 { font-size: 1.8rem; }
-      .container { padding: 1rem; }
-      .section { padding: 1.5rem; }
-      .section-title { font-size: 1.2rem; }
-      .goals-section { padding: 1.5rem; }
-      .goals-section h3 { font-size: 1.2rem; }
-      .goals-section li { font-size: 1rem; }
-      .after-section { padding: 1.5rem; }
-      .after-section li { font-size: 1rem; }
-    }
-  </style>
+  <title>מבנה פגישת בדיקה, בקרה ודיוק - השקעות לצעירים בתכל'ס</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container narrow">
     <a href="index.html" class="back-link">→ חזרה לדף הבית</a>
 
     <header>
-      <h1>מבנה פגישה 4: בדיקה, בקרה ודיוק</h1>
-      <p>מבנה העבודה של פגישת בדיקה, דיוק ובקרה</p>
+      <span class="header-eyebrow">פגישה 4</span>
+      <div class="brand-logo">🔍</div>
+      <h1>מבנה פגישת בדיקה, בקרה ודיוק</h1>
+      <h2>מבנה העבודה של פגישת בדיקה, דיוק ובקרה</h2>
     </header>
 
     <!-- Goals Section -->
@@ -291,7 +29,7 @@
         <li>להבין את החוויה המנטלית של הלקוח עם ניהול התקציב</li>
         <li>לוודא שכל המשימות הבירוקרטיות בוצעו (ביטולים, טלפונים, הו"ק)</li>
         <li>לייצב את הקרקע לקראת בניית התוכנית הכלכלית</li>
-        <li>להעצים את הלקוח ולוודא שהוא יודע לתפעל את האקסל עצמאית</li>
+        <li>להעצים את הלקוח ולוודא שהוא יודע לתפעל את המערכת עצמאית</li>
       </ul>
     </div>
 
@@ -358,6 +96,7 @@
         <li>זיהוי נקודות תורפה: איפה היו חריגות ומה היה קשה ליישום</li>
         <li>הבנה איפה התקציב לא פגש את המציאות</li>
       </ul>
+      <div class="tip"><span>📥</span><span>הביצוע בפועל נכנס למערכת דרך טאב הייבוא, ונצפה בטאב החודשי מול התכנון.</span></div>
     </div>
 
     <!-- שלב 6 -->
@@ -384,9 +123,7 @@
         <li>יישום הלקחים מהפגישה והמשך בקרה עצמית</li>
         <li>הלקוח מכין מטרות כלכליות לפי קובץ שיקבל — לקראת פגישת התוכנית הכלכלית</li>
       </ul>
-      <div style="padding-right: 0.5rem; margin-top: 0.5rem;">
-        <a href="https://docs.google.com/document/d/1NCUUnCHc_rgAf45RvVfuYiBRxE9dUS3M/copy" target="_blank" style="display: inline-block; margin-top: 0.5rem; padding: 0.75rem 1.5rem; background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%); color: #fff; border-radius: 10px; font-size: 1rem; font-weight: 700; font-family: 'Heebo', sans-serif; text-decoration: none;">📄 צור עותק של קובץ המטרות הכלכליות</a>
-      </div>
+      <a href="https://docs.google.com/document/d/1NCUUnCHc_rgAf45RvVfuYiBRxE9dUS3M/copy" target="_blank" rel="noopener noreferrer" class="cta-btn">📄 צור עותק של קובץ המטרות הכלכליות</a>
     </div>
 
     <!-- שלב 8 -->
@@ -411,12 +148,12 @@
         <li>שליחת רשימת משימות עם דדליינים ברורים</li>
         <li>הכנה לקראת פגישת התוכנית הכלכלית</li>
       </ul>
-      <a href="https://docs.google.com/document/d/1-H3KVRNtN6Yw_cCmXFd_3HVwAB99QVGr/copy" target="_blank" class="template-link">📄 תבנית לשליחת סיכום פגישת הבדיקה והבקרה ללקוח</a>
+      <a href="https://docs.google.com/document/d/1-H3KVRNtN6Yw_cCmXFd_3HVwAB99QVGr/copy" target="_blank" rel="noopener noreferrer" class="template-link">📄 תבנית לשליחת סיכום פגישת הבדיקה והבקרה ללקוח</a>
     </div>
 
     <footer>
-      <p>השקעות לצעירים בתכל'ס - מבנה פגישת בדיקה, בקרה ודיוק</p>
-      <p style="margin-top: 1rem; font-size: 0.85rem;">אורי ניניו</p>
+      <p>השקעות לצעירים בתכל'ס — מבנה פגישת בדיקה, בקרה ודיוק</p>
+      <p class="sign">אורי ניניו</p>
     </footer>
   </div>
 </body>
