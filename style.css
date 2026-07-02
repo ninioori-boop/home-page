@@ -34,7 +34,7 @@ body{
 
 /* ניקיון: הסתרת כל האייקונים הדקורטיביים */
 svg.ic{display:none !important}
-.brand-logo,.tool-icon,.group-heading .ico,.nav-mark{display:none !important}
+.brand-logo,.tool-icon,.group-heading .ico,.nav-mark,.nav-brand{display:none !important}
 
 @media (prefers-reduced-motion: reduce){*{animation:none !important;transition:none !important}}
 @keyframes rise{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:translateY(0)}}
