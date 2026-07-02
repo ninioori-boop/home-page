@@ -11,30 +11,53 @@
 </head>
 <body>
   <div class="container">
-    <header>
+
+    <nav class="navbar">
+      <a class="nav-brand" href="index.html">
+        <span class="nav-mark">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
+        </span>
+        <span class="nav-brand-text">הכלכלן של הבית</span>
+      </a>
+      <div class="nav-actions">
+        <a class="nav-link" href="index.html">דף הבית</a>
+        <a class="nav-cta" href="https://app.orimipuy.com/auth" target="_blank" rel="noopener noreferrer">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          כניסה למערכת
+        </a>
+      </div>
+    </nav>
+
+    <header class="hero">
       <span class="header-eyebrow">השקעות לצעירים בתכל'ס</span>
-      <div class="brand-logo">🏠</div>
       <h1>דף הבית של היועץ</h1>
       <h2>מסע הליווי במערכת</h2>
       <p>כל שלב בתהליך הליווי, צעד־אחר־צעד, כפי שהוא עובד היום בתוך המערכת. מכאן מתחילים.</p>
       <div class="hero-cta">
-        <a href="https://app.orimipuy.com/auth" target="_blank" rel="noopener noreferrer" class="enter-system-btn">🖥️ כניסה למערכת</a>
+        <a href="https://app.orimipuy.com/auth" target="_blank" rel="noopener noreferrer" class="enter-system-btn">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+          כניסה למערכת
+        </a>
       </div>
     </header>
 
     <!-- ============ אזור 1: מסע הליווי ============ -->
     <div class="group-heading">
-      <span class="ico">🧭</span>
-      <h2>מסע הליווי - שלבי התהליך</h2>
+      <span class="ico">
+        <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+      </span>
+      <h2>מסע הליווי — שלבי התהליך</h2>
       <span class="line"></span>
     </div>
-    <p class="group-sub">שלב הכנה + חמש פגישות. אותו תהליך, אותן מטרות - הכל מתנהל במערכת.</p>
+    <p class="group-sub">שלב הכנה + חמש פגישות. אותו תהליך, אותן מטרות — הכל מתנהל במערכת.</p>
 
     <div class="tools-grid">
       <!-- שלב הכנה -->
       <a href="pre-meeting.html" class="tool-card">
         <span class="step-tag">שלב הכנה</span>
-        <div class="tool-icon">🧭</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"/></svg>
+        </div>
         <h3>פלואו עבודת היועץ טרום הפגישה</h3>
         <p>ההכנה לפני שמתחילים: קבלת הקבצים שהלקוח העלה למערכת, הזנת הנתונים וניתוח ראשוני.</p>
         <div class="btn">כניסה לשלב</div>
@@ -43,7 +66,9 @@
       <!-- פגישה 1 -->
       <a href="meeting-structure.html" class="tool-card">
         <span class="step-tag">פגישה 1</span>
-        <div class="tool-icon">🤝</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+        </div>
         <h3>פגישת הצגת התהליך</h3>
         <p>היכרות, תיאום ציפיות והצגת מבנה הליווי. בונים אמון ומסבירים מה הולך לקרות.</p>
         <div class="btn">כניסה לשלב</div>
@@ -52,25 +77,31 @@
       <!-- פגישה 2 -->
       <a href="mapping-meeting.html" class="tool-card">
         <span class="step-tag">פגישה 2</span>
-        <div class="tool-icon">🗂️</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
+        </div>
         <h3>פגישת המיפוי הפיננסי</h3>
-        <p>שיקוף המצב הפיננסי מתוך המיפוי במערכת - הכנסות, הוצאות, התחייבויות ותזרים.</p>
+        <p>שיקוף המצב הפיננסי מתוך המיפוי במערכת — הכנסות, הוצאות, התחייבויות ותזרים.</p>
         <div class="btn">כניסה לשלב</div>
       </a>
 
       <!-- פגישה 3 -->
       <a href="budget-meeting.html" class="tool-card">
         <span class="step-tag">פגישה 3</span>
-        <div class="tool-icon">💰</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12V7H5a2 2 0 0 1 0-4h14v4"/><path d="M3 5v14a2 2 0 0 0 2 2h16v-5"/><path d="M18 12a2 2 0 0 0 0 4h4v-4Z"/></svg>
+        </div>
         <h3>פגישת התקציב</h3>
-        <p>בניית תקציב שהלקוח חי איתו בשלום - הופכים את המספרים מהמיפוי לתוכנית עבודה.</p>
+        <p>בניית תקציב שהלקוח חי איתו בשלום — הופכים את המספרים מהמיפוי לתוכנית עבודה.</p>
         <div class="btn">כניסה לשלב</div>
       </a>
 
       <!-- פגישה 4 -->
       <a href="control-meeting.html" class="tool-card">
         <span class="step-tag">פגישה 4</span>
-        <div class="tool-icon">🔍</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m12 14 4-4"/><path d="M3.34 19a10 10 0 1 1 17.32 0"/></svg>
+        </div>
         <h3>פגישת בדיקה, בקרה ודיוק</h3>
         <p>תקציב מול ביצוע בפועל: מה עבד, מה לא, ואיך מדייקים את התוכנית לחודש הבא.</p>
         <div class="btn">כניסה לשלב</div>
@@ -79,16 +110,20 @@
       <!-- פגישה 5 -->
       <a href="plan-meeting.html" class="tool-card">
         <span class="step-tag">פגישה 5</span>
-        <div class="tool-icon">📈</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></svg>
+        </div>
         <h3>פגישת התוכנית הכלכלית</h3>
-        <p>בונים את הדרך למטרות - הקצאת ההון הנזיל והתזרים החודשי לטווח הקצר, הבינוני והארוך.</p>
+        <p>בונים את הדרך למטרות — הקצאת ההון הנזיל והתזרים החודשי לטווח הקצר, הבינוני והארוך.</p>
         <div class="btn">כניסה לשלב</div>
       </a>
     </div>
 
     <!-- ============ אזור 2: הכלים והמערכת ============ -->
     <div class="group-heading">
-      <span class="ico">🧰</span>
+      <span class="ico">
+        <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+      </span>
       <h2>הכלים והמערכת</h2>
       <span class="line"></span>
     </div>
@@ -98,7 +133,9 @@
       <!-- המערכת -->
       <a href="https://app.orimipuy.com/auth" target="_blank" rel="noopener noreferrer" class="tool-card feature">
         <span class="step-tag">הכלי המרכזי</span>
-        <div class="tool-icon">🖥️</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+        </div>
         <h3>המערכת</h3>
         <p>הכניסה למערכת: דוחות (אשראי · עו"ש · ייבוא), תקציב (מיפוי · חודשי · שנתי · מגמות), כלים ופגישות. כאן מתנהל כל המיפוי והליווי.</p>
         <div class="btn">כניסה למערכת</div>
@@ -106,55 +143,67 @@
 
       <!-- דף משימות ללקוח -->
       <a href="client-tasks.html" class="tool-card">
-        <div class="tool-icon">📋</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>
+        </div>
         <h3>דף משימות ללקוח לקראת המיפוי</h3>
-        <p>רשימת המשימות שהלקוח מבצע לפני פגישת המיפוי - מאיפה מורידים כל נתון, והעלאה דרך מסך "העלאת מסמכים".</p>
+        <p>רשימת המשימות שהלקוח מבצע לפני פגישת המיפוי — מאיפה מורידים כל נתון, והעלאה דרך מסך "העלאת מסמכים".</p>
         <div class="btn">כניסה למדריך</div>
       </a>
 
       <!-- הזנת נתונים למערכת -->
       <a href="upload-data.html" class="tool-card">
-        <div class="tool-icon">📤</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" x2="12" y1="3" y2="15"/></svg>
+        </div>
         <h3>איך מזינים נתונים למערכת</h3>
-        <p>צ'קליסט הזנת הנתונים דרך טאבי אשראי, עו"ש, ייבוא ומיפוי - כולל הסיווג האוטומטי (AI) שהחליף את המקטרג.</p>
+        <p>צ'קליסט הזנת הנתונים דרך טאבי אשראי, עו"ש, ייבוא ומיפוי — כולל הסיווג האוטומטי (AI) שהחליף את המקטרג.</p>
         <div class="btn">כניסה למדריך</div>
       </a>
 
       <!-- בחינת המיפוי -->
       <a href="examine-excel.html" class="tool-card">
-        <div class="tool-icon">🔎</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" x2="16.65" y1="21" y2="16.65"/></svg>
+        </div>
         <h3>איך בוחנים את המיפוי</h3>
-        <p>צ'קליסט לבחינת המיפוי במערכת: זיהוי דפוסים, סעיפים חריגים ומה יוצר את תמונת התזרים - הכנה לפגישה.</p>
+        <p>צ'קליסט לבחינת המיפוי במערכת: זיהוי דפוסים, סעיפים חריגים ומה יוצר את תמונת התזרים — הכנה לפגישה.</p>
         <div class="btn">כניסה למדריך</div>
       </a>
 
       <!-- תובנות -->
       <a href="insights.html" class="tool-card">
-        <div class="tool-icon">💡</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg>
+        </div>
         <h3>תובנות חשובות לפגישה</h3>
-        <p>התובנות המרכזיות שהיועץ מזהה מתוך המיפוי - תזרים, אשראי, חובות, חיסכון, פנסיה ודירוג אשראי.</p>
+        <p>התובנות המרכזיות שהיועץ מזהה מתוך המיפוי — תזרים, אשראי, חובות, חיסכון, פנסיה ודירוג אשראי.</p>
         <div class="btn">כניסה למדריך</div>
       </a>
 
       <!-- פורמט סיכום פגישה -->
       <a href="meeting-summary.html" class="tool-card">
-        <div class="tool-icon">📝</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v5h5"/><path d="M16 13H8"/><path d="M16 17H8"/><path d="M10 9H8"/></svg>
+        </div>
         <h3>פורמט סיכום פגישה</h3>
-        <p>סיכום כל פגישה נכתב בטאב "פגישות" במערכת - מה היה, מסקנות ומשימות - ומיוצא כ-PDF ממותג ללקוח.</p>
+        <p>סיכום כל פגישה נכתב בטאב "פגישות" במערכת — מה היה, מסקנות ומשימות — ומיוצא כ‑PDF ממותג ללקוח.</p>
         <div class="btn">כניסה למדריך</div>
       </a>
 
       <!-- דף מטרות הצלחה -->
       <a href="goals.html" class="tool-card">
-        <div class="tool-icon">🎯</div>
+        <div class="tool-icon">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        </div>
         <h3>דף מטרות הצלחה ללקוח</h3>
-        <p>השלבים שלנו לצמיחה כלכלית - מה ייחשב הצלחה מבחינת הלקוח לאורך התהליך.</p>
+        <p>השלבים שלנו לצמיחה כלכלית — מה ייחשב הצלחה מבחינת הלקוח לאורך התהליך.</p>
         <div class="btn">כניסה למדריך</div>
       </a>
     </div>
 
     <footer>
-      <p>השקעות לצעירים בתכל'ס - כל שלבי הליווי במקום אחד</p>
+      <p>השקעות לצעירים בתכל'ס — כל שלבי הליווי במקום אחד</p>
       <p class="sign">אורי ניניו</p>
     </footer>
   </div>
