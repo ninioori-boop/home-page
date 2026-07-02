@@ -7,17 +7,177 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <style>
+    /* ============================================================
+       פגישת היכרות — פרוטוטייפ עיצוב בסגנון 21st.dev (עצמאי)
+       לא נשען על style.css — כדי לא להשפיע על שאר העמודים
+       ============================================================ */
+    :root{
+      --brand:#2563eb; --brand-600:#1d4ed8; --brand-700:#1e40af;
+      --brand-050:#eff4ff; --brand-100:#dbe7fe; --brand-200:#bcd3fb;
+      --ink:#0f1b2d; --body:#3b465c; --muted:#6b7688;
+      --card:#ffffff; --line:#e7ecf4; --line-soft:#eef2f8;
+      --green:#15803d; --green-050:#ecfdf3; --green-100:#c9f2d7;
+      --amber:#b45309; --amber-050:#fff7ed; --amber-100:#fde6c8;
+      --radius:22px; --radius-md:14px; --radius-sm:11px;
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html,body{direction:rtl}
+    body{
+      font-family:'Rubik','Heebo',system-ui,sans-serif;
+      color:var(--body);
+      line-height:1.7;
+      -webkit-font-smoothing:antialiased;
+      background:
+        radial-gradient(720px 420px at 92% -6%, rgba(37,99,235,.16), transparent 62%),
+        radial-gradient(560px 380px at 4% 8%, rgba(37,99,235,.10), transparent 60%),
+        linear-gradient(180deg,#eaf1ff 0%, #f4f7fc 30%, #f4f7fc 100%);
+      background-attachment:fixed;
+      min-height:100vh;
+    }
+    svg.ic{width:1.15em;height:1.15em;stroke-width:1.75;flex:none;vertical-align:-.15em}
+    .wrap{max-width:1080px;margin:0 auto;padding:1.4rem 1.5rem 3.5rem}
+    a{color:inherit}
+
+    /* ---------- Navbar ---------- */
+    .nav{
+      display:flex;align-items:center;justify-content:space-between;gap:1rem;
+      background:var(--card);border:1px solid var(--line);
+      border-radius:18px;box-shadow:0 1px 2px rgba(15,27,45,.05);
+      padding:.65rem 1rem .65rem 1.15rem;margin-bottom:2.2rem;
+    }
+    .nav-brand{display:inline-flex;align-items:center;gap:.65rem;text-decoration:none;color:var(--ink)}
+    .nav-mark{display:inline-flex;align-items:center;justify-content:center;width:38px;height:38px;
+      border-radius:11px;background:var(--brand);color:#fff;box-shadow:0 8px 18px -8px rgba(37,99,235,.7)}
+    .nav-mark svg{width:21px;height:21px}
+    .nav-brand b{font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+    .nav-actions{display:flex;align-items:center;gap:.4rem}
+    .nav-link{padding:.55rem .9rem;border-radius:var(--radius-sm);color:var(--muted);
+      text-decoration:none;font-size:.95rem;font-weight:500;transition:.2s}
+    .nav-link:hover{color:var(--brand);background:var(--brand-050)}
+    .nav-cta{display:inline-flex;align-items:center;gap:.45rem;padding:.6rem 1.15rem;
+      border-radius:var(--radius-sm);background:var(--brand);color:#fff;text-decoration:none;
+      font-size:.95rem;font-weight:600;box-shadow:0 10px 20px -10px rgba(37,99,235,.8);transition:.2s}
+    .nav-cta:hover{background:var(--brand-600);transform:translateY(-1px)}
+    .nav-cta svg{width:17px;height:17px}
+
+    /* ---------- Hero card ---------- */
+    .hero{
+      position:relative;background:var(--card);border:1px solid var(--line);
+      border-radius:var(--radius);overflow:hidden;
+      box-shadow:0 40px 80px -40px rgba(23,44,90,.40), 0 14px 30px -18px rgba(23,44,90,.20);
+      margin-bottom:2.2rem;
+    }
+    .hero-top{padding:2.6rem 2.4rem 2rem}
+    .eyebrow{display:inline-flex;align-items:center;gap:.45rem;font-size:.8rem;font-weight:600;
+      letter-spacing:.02em;color:var(--brand-700);background:var(--brand-050);
+      border:1px solid var(--brand-100);padding:.35rem .9rem;border-radius:999px;margin-bottom:1.15rem}
+    .eyebrow svg{width:15px;height:15px}
+    .hero h1{font-size:clamp(2rem,4.5vw,3.05rem);font-weight:800;letter-spacing:-.025em;
+      color:var(--ink);line-height:1.12;margin-bottom:.7rem;max-width:20ch}
+    .hero .lead{font-size:1.15rem;color:var(--muted);max-width:56ch;margin-bottom:1.6rem}
+    .cta-row{display:flex;flex-wrap:wrap;gap:.7rem}
+    .btn{display:inline-flex;align-items:center;gap:.55rem;font-weight:600;text-decoration:none;
+      border-radius:999px;padding:.85rem 1.7rem;font-size:1rem;transition:.2s;cursor:pointer;border:1px solid transparent}
+    .btn svg{width:18px;height:18px}
+    .btn-primary{background:var(--brand);color:#fff;box-shadow:0 14px 28px -14px rgba(37,99,235,.85)}
+    .btn-primary:hover{background:var(--brand-600);transform:translateY(-2px)}
+    .btn-ghost{background:#fff;color:var(--ink);border-color:var(--line)}
+    .btn-ghost:hover{border-color:var(--brand-200);color:var(--brand)}
+
+    /* ---------- App-preview panel ---------- */
+    .preview{background:linear-gradient(180deg,#f7f9fd,#f2f6fc);
+      border-top:1px solid var(--line);padding:1.5rem 2.4rem 2.2rem}
+    .preview-head{display:flex;align-items:center;justify-content:space-between;
+      flex-wrap:wrap;gap:.6rem;margin-bottom:1rem}
+    .preview-title{display:inline-flex;align-items:center;gap:.5rem;font-weight:700;color:var(--ink);font-size:1.05rem}
+    .preview-title svg{width:18px;height:18px;color:var(--brand)}
+    .chips{display:flex;gap:.4rem;flex-wrap:wrap}
+    .chip{font-size:.78rem;font-weight:600;color:var(--muted);background:#fff;
+      border:1px solid var(--line);border-radius:999px;padding:.25rem .75rem}
+    .chip.accent{color:var(--brand-700);background:var(--brand-050);border-color:var(--brand-100)}
+
+    .table{background:#fff;border:1px solid var(--line);border-radius:var(--radius-md);overflow:hidden}
+    .thead,.trow{display:grid;grid-template-columns:1.5fr 2.6fr .95fr .7fr;gap:.75rem;
+      padding:.7rem 1.1rem;align-items:center}
+    .thead{background:#f3f6fc;border-bottom:1px solid var(--line);font-size:.78rem;
+      font-weight:600;color:var(--muted)}
+    .trow{border-bottom:1px solid var(--line-soft);font-size:.92rem;transition:background .15s}
+    .trow:last-child{border-bottom:none}
+    .trow:hover{background:#f8fafd}
+    .cell-step{display:flex;align-items:center;gap:.55rem;font-weight:600;color:var(--ink)}
+    .dot{width:9px;height:9px;min-width:9px;border-radius:50%;background:var(--brand)}
+    .cell-do{color:var(--body)}
+    .cell-dur{color:var(--muted);font-variant-numeric:tabular-nums}
+    .badge{display:inline-flex;align-items:center;gap:.35rem;font-size:.76rem;font-weight:600;
+      padding:.2rem .6rem;border-radius:999px;white-space:nowrap}
+    .badge::before{content:"";width:6px;height:6px;border-radius:50%;background:currentColor}
+    .badge.ready{color:var(--brand-700);background:var(--brand-050);border:1px solid var(--brand-100)}
+    .badge.task{color:var(--amber);background:var(--amber-050);border:1px solid var(--amber-100)}
+    @media(max-width:640px){
+      .thead{display:none}
+      .trow{grid-template-columns:1fr;gap:.3rem;padding:.9rem 1.1rem}
+      .cell-dur{font-size:.82rem}
+    }
+
+    /* ---------- Panels (goals / summary) ---------- */
+    .panel{border-radius:var(--radius-md);padding:1.7rem 1.9rem;margin-bottom:1.15rem}
+    .panel h3{font-size:1.25rem;font-weight:700;margin-bottom:1rem;display:flex;align-items:center;gap:.55rem}
+    .panel h3 svg{width:22px;height:22px}
+    .panel ul{list-style:none}
+    .panel li{padding:.5rem 0;font-size:1.05rem;display:flex;align-items:flex-start;gap:.65rem}
+    .panel li::before{content:"";width:18px;height:18px;min-width:18px;margin-top:.22rem;
+      -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat;
+      mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2.4' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/contain no-repeat}
+    .panel.goals{background:linear-gradient(180deg,#fffdf5,#fef9ec);border:1px solid #f2e5bd;border-inline-start:4px solid #d9a441}
+    .panel.goals h3{color:#8a5a12}
+    .panel.goals li{color:#6b4a12}
+    .panel.goals li::before{background:#d9a441}
+    .panel.summary{background:linear-gradient(180deg,#f2fbf5,#eafaf0);border:1px solid var(--green-100);border-inline-start:4px solid var(--green)}
+    .panel.summary h3{color:#14622f}
+    .panel.summary li{color:#14532d}
+    .panel.summary li::before{background:var(--green)}
+
+    /* ---------- Step cards ---------- */
+    .section-lead{margin:2.4rem .3rem 1rem;display:flex;align-items:center;gap:.7rem}
+    .section-lead h2{font-size:1.35rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+    .section-lead .rule{flex:1;height:1px;background:linear-gradient(90deg,var(--line),transparent)}
+    .steps{display:grid;gap:1rem}
+    .step{background:var(--card);border:1px solid var(--line);border-radius:var(--radius-md);
+      padding:1.5rem 1.6rem;box-shadow:0 1px 2px rgba(15,27,45,.05);transition:.2s}
+    .step:hover{box-shadow:0 18px 40px -24px rgba(23,44,90,.30);border-color:var(--brand-100)}
+    .step-head{display:flex;align-items:center;gap:.85rem;margin-bottom:1rem}
+    .step-num{width:38px;height:38px;min-width:38px;border-radius:11px;background:var(--brand-050);
+      border:1px solid var(--brand-100);color:var(--brand);display:flex;align-items:center;
+      justify-content:center;font-weight:700;font-size:1.05rem}
+    .step-title{font-size:1.18rem;font-weight:700;color:var(--ink);letter-spacing:-.01em}
+    .check{list-style:none}
+    .check li{padding:.6rem 0;font-size:1.04rem;color:var(--body);border-bottom:1px solid var(--line-soft);
+      display:flex;align-items:flex-start;gap:.7rem}
+    .check li:last-child{border-bottom:none}
+    .check li::before{content:"";width:21px;height:21px;min-width:21px;margin-top:.12rem;border-radius:6px;
+      background:var(--brand-050) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232563eb' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/13px no-repeat}
+
+    /* ---------- Footer ---------- */
+    footer{text-align:center;padding:2.75rem 1rem 0;color:var(--muted);font-size:.95rem}
+    footer .sign{margin-top:.5rem;font-size:.85rem;color:var(--brand-700);font-weight:600}
+
+    @media(max-width:768px){
+      .wrap{padding:1rem 1rem 2.5rem}
+      .nav-link{display:none}
+      .hero-top{padding:1.9rem 1.4rem 1.5rem}
+      .preview{padding:1.3rem 1.4rem 1.8rem}
+      .panel,.step{padding:1.35rem 1.35rem}
+    }
+  </style>
 </head>
 <body>
-  <div class="container narrow">
+  <div class="wrap">
 
-    <nav class="navbar">
+    <nav class="nav">
       <a class="nav-brand" href="index.html">
-        <span class="nav-mark">
-          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg>
-        </span>
-        <span class="nav-brand-text">הכלכלן של הבית</span>
+        <span class="nav-mark"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M9 22V12h6v10"/></svg></span>
+        <b>הכלכלן של הבית</b>
       </a>
       <div class="nav-actions">
         <a class="nav-link" href="index.html">דף הבית</a>
@@ -28,22 +188,96 @@
       </div>
     </nav>
 
-    <header>
-      <span class="header-eyebrow">פגישה 1</span>
-      <div class="brand-logo"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
-      <h1>מבנה פגישת הצגת התהליך</h1>
-      <h2>פגישת היכרות, תיאום ציפיות והצגת התהליך</h2>
-    </header>
+    <!-- ============ Hero ============ -->
+    <section class="hero">
+      <div class="hero-top">
+        <span class="eyebrow">
+          <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+          פגישה 1 · פגישת היכרות
+        </span>
+        <h1>פגישת הצגת התהליך</h1>
+        <p class="lead">היכרות, תיאום ציפיות והצגת מבנה הליווי. כאן בונים אמון, מבינים מה הביא את הלקוח, ומראים לו בדיוק מה הולך לקרות בהמשך.</p>
+        <div class="cta-row">
+          <a class="btn btn-primary" href="https://drive.google.com/file/d/1VvVbhLznCkF5cqs3C6hea6YBJGiHYmjx/view?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg>
+            פתח את המצגת
+          </a>
+          <a class="btn btn-ghost" href="https://app.orimipuy.com/auth" target="_blank" rel="noopener noreferrer">
+            <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+            כניסה למערכת
+          </a>
+        </div>
+      </div>
 
-    <!-- קישור למצגת -->
-    <div class="section" style="text-align: center;">
-      <div class="section-title solo">קישור למצגת</div>
-      <a href="https://drive.google.com/file/d/1VvVbhLznCkF5cqs3C6hea6YBJGiHYmjx/view?usp=drive_link" target="_blank" rel="noopener noreferrer" class="cta-btn"><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="14" x="2" y="3" rx="2"/><line x1="8" x2="16" y1="21" y2="21"/><line x1="12" x2="12" y1="17" y2="21"/></svg> פתח את המצגת</a>
-    </div>
+      <!-- App-preview: agenda -->
+      <div class="preview">
+        <div class="preview-head">
+          <span class="preview-title">
+            <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" x2="16" y1="2" y2="6"/><line x1="8" x2="8" y1="2" y2="6"/><line x1="3" x2="21" y1="10" y2="10"/></svg>
+            סדר היום של הפגישה
+          </span>
+          <div class="chips">
+            <span class="chip accent">7 שלבים</span>
+            <span class="chip">~60 דק'</span>
+          </div>
+        </div>
 
-    <!-- Goals Section -->
-    <div class="goals-section">
-      <h3><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg> מטרת הפגישה</h3>
+        <div class="table">
+          <div class="thead">
+            <div>שלב</div><div>מה עושים</div><div>סטטוס</div><div>משך</div>
+          </div>
+          <div class="trow">
+            <div class="cell-step"><span class="dot"></span>פתיחה וחיבור</div>
+            <div class="cell-do">יצירת אמון ואווירה נינוחה</div>
+            <div><span class="badge ready">מוכן</span></div>
+            <div class="cell-dur">10 ד'</div>
+          </div>
+          <div class="trow">
+            <div class="cell-step"><span class="dot"></span>הצגת התהליך</div>
+            <div class="cell-do">פתיחת המצגת ומבנה הליווי</div>
+            <div><span class="badge ready">מוכן</span></div>
+            <div class="cell-dur">10 ד'</div>
+          </div>
+          <div class="trow">
+            <div class="cell-step"><span class="dot"></span>היכרות אישית</div>
+            <div class="cell-do">מי הלקוח ומה המטרה שלו</div>
+            <div><span class="badge ready">מוכן</span></div>
+            <div class="cell-dur">10 ד'</div>
+          </div>
+          <div class="trow">
+            <div class="cell-step"><span class="dot"></span>תיאום ציפיות</div>
+            <div class="cell-do">גבולות, דיסקרטיות ומחויבות</div>
+            <div><span class="badge ready">מוכן</span></div>
+            <div class="cell-dur">10 ד'</div>
+          </div>
+          <div class="trow">
+            <div class="cell-step"><span class="dot"></span>מבנה התהליך</div>
+            <div class="cell-do">סקירת שלבי הליווי</div>
+            <div><span class="badge ready">מוכן</span></div>
+            <div class="cell-dur">5 ד'</div>
+          </div>
+          <div class="trow">
+            <div class="cell-step"><span class="dot"></span>דף המשימות</div>
+            <div class="cell-do">מה נדרש עד הפגישה הבאה</div>
+            <div><span class="badge task">משימה ללקוח</span></div>
+            <div class="cell-dur">10 ד'</div>
+          </div>
+          <div class="trow">
+            <div class="cell-step"><span class="dot"></span>מסע ויעדים</div>
+            <div class="cell-do">חיבור המסע ליעדים שהוגדרו</div>
+            <div><span class="badge ready">מוכן</span></div>
+            <div class="cell-dur">5 ד'</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ Goals ============ -->
+    <section class="panel goals">
+      <h3>
+        <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+        מטרת הפגישה
+      </h3>
       <ul>
         <li>להציג את תהליך הליווי הפיננסי בצורה מסודרת וברורה</li>
         <li>להבין מה גרם ללקוח להגיע לתהליך</li>
@@ -51,107 +285,90 @@
         <li>לייצר אמון ותחושת ביטחון ביועץ ובתהליך</li>
         <li>לגרום ללקוח להרגיש שהוא בידיים טובות</li>
       </ul>
+    </section>
+
+    <!-- ============ Detailed steps ============ -->
+    <div class="section-lead">
+      <h2>מהלך הפגישה — שלב אחר שלב</h2>
+      <span class="rule"></span>
     </div>
 
-    <!-- Section 1 -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">1</div>
-        <div class="section-title">פתיחה, הצגת הפגישה וחיבור ראשוני</div>
-      </div>
-      <ul class="checklist">
-        <li>הצגת מטרת הפגישה ומה הולך לקרות בה</li>
-        <li>הדגשה שמדובר בפגישת היכרות ותיאום ציפיות</li>
-        <li>שיחה פתוחה ואותנטית</li>
-        <li>חיזוק הלקוחות על הבחירה לעשות סדר פיננסי</li>
-        <li>יצירת אווירה נינוחה ונטולת שיפוטיות</li>
-      </ul>
+    <div class="steps">
+      <article class="step">
+        <div class="step-head"><div class="step-num">1</div><div class="step-title">פתיחה, הצגת הפגישה וחיבור ראשוני</div></div>
+        <ul class="check">
+          <li>הצגת מטרת הפגישה ומה הולך לקרות בה</li>
+          <li>הדגשה שמדובר בפגישת היכרות ותיאום ציפיות</li>
+          <li>שיחה פתוחה ואותנטית</li>
+          <li>חיזוק הלקוחות על הבחירה לעשות סדר פיננסי</li>
+          <li>יצירת אווירה נינוחה ונטולת שיפוטיות</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="step-num">2</div><div class="step-title">פתיחת המצגת והצגת התהליך</div></div>
+        <ul class="check">
+          <li>פתיחת המצגת והצגת מבנה הליווי בקצרה</li>
+          <li>הסבר על השלבים המרכזיים בתהליך</li>
+          <li>עצירה יזומה לבדוק הבנה ולוודא שהכול ברור</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="step-num">3</div><div class="step-title">היכרות אישית</div></div>
+        <ul class="check">
+          <li>הצגה קצרה של היועץ</li>
+          <li>היכרות עם הלקוחות</li>
+          <li>הבנה מי הם, מה הביא אותם לתהליך ומה המטרה שלהם</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="step-num">4</div><div class="step-title">תיאום ציפיות</div></div>
+        <ul class="check">
+          <li>הסבר שהתהליך הוא אותנטי ולעיתים גם רגשי</li>
+          <li>הבהרה שמדובר בתהליך מובנה עם שלבים ברורים</li>
+          <li>הדגשה שהסביבה נטולת שיפוטיות</li>
+          <li>הבטחה לדיסקרטיות מלאה</li>
+          <li>הבהרה שהתהליך דורש מחויבות ומוטיבציה מצד הלקוחות</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="step-num">5</div><div class="step-title">הצגת מבנה התהליך</div></div>
+        <ul class="check">
+          <li>סקירה קצרה של שלבי הליווי</li>
+          <li>הסבר מה קורה בכל שלב</li>
+          <li>בדיקה יזומה של הבנת הלקוחות</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="step-num">6</div><div class="step-title">הצגת דף המשימות</div></div>
+        <ul class="check">
+          <li>הצגת דף המשימות בצורה ברורה ונעימה</li>
+          <li>הסבר מה נדרש מהלקוחות עד הפגישה הבאה</li>
+          <li>הדגשה שהלקוח מעלה את הכל דרך מסך "העלאת מסמכים" במערכת</li>
+          <li>שליחת דף המשימות ללקוחות לאחר הפגישה</li>
+          <li>הדגשה שהיועץ זמין לכל שאלה בין הפגישות</li>
+        </ul>
+      </article>
+
+      <article class="step">
+        <div class="step-head"><div class="step-num">7</div><div class="step-title">הצגת מסע הלקוח והיעדים</div></div>
+        <ul class="check">
+          <li>הצגת מסע הלקוח לאורך התהליך</li>
+          <li>חיבור המסע ליעדים שהוגדרו</li>
+        </ul>
+      </article>
     </div>
 
-    <!-- Section 2 -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">2</div>
-        <div class="section-title">פתיחת המצגת והצגת התהליך</div>
-      </div>
-      <ul class="checklist">
-        <li>פתיחת המצגת והצגת מבנה הליווי בקצרה</li>
-        <li>הסבר על השלבים המרכזיים בתהליך</li>
-        <li>עצירה יזומה לבדוק הבנה ולוודא שהכול ברור</li>
-      </ul>
-    </div>
-
-    <!-- Section 3 -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">3</div>
-        <div class="section-title">היכרות אישית</div>
-      </div>
-      <ul class="checklist">
-        <li>הצגה קצרה של היועץ</li>
-        <li>היכרות עם הלקוחות</li>
-        <li>הבנה מי הם, מה הביא אותם לתהליך ומה המטרה שלהם</li>
-      </ul>
-    </div>
-
-    <!-- Section 4 -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">4</div>
-        <div class="section-title">תיאום ציפיות</div>
-      </div>
-      <ul class="checklist">
-        <li>הסבר שהתהליך הוא אותנטי ולעיתים גם רגשי</li>
-        <li>הבהרה שמדובר בתהליך מובנה עם שלבים ברורים</li>
-        <li>הדגשה שהסביבה נטולת שיפוטיות</li>
-        <li>הבטחה לדיסקרטיות מלאה</li>
-        <li>הבהרה שהתהליך דורש מחויבות ומוטיבציה מצד הלקוחות</li>
-      </ul>
-    </div>
-
-    <!-- Section 5 -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">5</div>
-        <div class="section-title">הצגת מבנה התהליך</div>
-      </div>
-      <ul class="checklist">
-        <li>סקירה קצרה של שלבי הליווי</li>
-        <li>הסבר מה קורה בכל שלב</li>
-        <li>בדיקה יזומה של הבנת הלקוחות</li>
-      </ul>
-    </div>
-
-    <!-- Section 6 -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">6</div>
-        <div class="section-title">הצגת דף המשימות</div>
-      </div>
-      <ul class="checklist">
-        <li>הצגת דף המשימות בצורה ברורה ונעימה</li>
-        <li>הסבר מה נדרש מהלקוחות עד הפגישה הבאה</li>
-        <li>הדגשה שהלקוח מעלה את הכל דרך מסך "העלאת מסמכים" במערכת</li>
-        <li>שליחת דף המשימות ללקוחות לאחר הפגישה</li>
-        <li>הדגשה שהיועץ זמין לכל שאלה בין הפגישות</li>
-      </ul>
-    </div>
-
-    <!-- Section 7 -->
-    <div class="section">
-      <div class="section-header">
-        <div class="section-number">7</div>
-        <div class="section-title">הצגת מסע הלקוח והיעדים</div>
-      </div>
-      <ul class="checklist">
-        <li>הצגת מסע הלקוח לאורך התהליך</li>
-        <li>חיבור המסע ליעדים שהוגדרו</li>
-      </ul>
-    </div>
-
-    <!-- Summary Section -->
-    <div class="summary-section">
-      <h3><svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg> סיכום הפגישה</h3>
+    <!-- ============ Summary ============ -->
+    <section class="panel summary">
+      <h3>
+        <svg class="ic" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="m9 11 3 3L22 4"/></svg>
+        סיכום הפגישה
+      </h3>
       <ul>
         <li>סיכום ברור של מה נעשה בפגישה</li>
         <li>חזרה על הנקודות המרכזיות</li>
@@ -159,10 +376,10 @@
         <li>קביעת פגישת המיפוי הכלכלי</li>
         <li>הבהרה מה הצעד הבא בתהליך</li>
       </ul>
-    </div>
+    </section>
 
     <footer>
-      <p>השקעות לצעירים בתכל'ס - מבנה פגישת הצגת התהליך</p>
+      <p>השקעות לצעירים בתכל'ס — מבנה פגישת הצגת התהליך</p>
       <p class="sign">אורי ניניו</p>
     </footer>
   </div>
